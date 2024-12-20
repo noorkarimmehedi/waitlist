@@ -8,7 +8,7 @@ export const siteConfig = {
       twitter: "https://twitter.com/nonzeroexitcode",
       github: "https://github.com/danielpetho",
       linkedin: "https://www.linkedin.com/in/danielpetho",
-      email: "hello@fancycomponents.dev",
+      email: "hello@danielpetho.com",
     },
   };
   
