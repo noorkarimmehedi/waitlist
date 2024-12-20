@@ -7,7 +7,7 @@ import {
   isValidElement,
   cloneElement,
 } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface ScrambleHoverProps {
@@ -55,7 +55,7 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   const [displayText, setDisplayText] = useState(text);
   const [isScrambling, setIsScrambling] = useState(false);
   const [internalHovering, setInternalHovering] = useState(false);
-  const [revealedIndices, setRevealedIndices] = useState(new Set<number>());
+  const [revealedIndices] = useState(new Set<number>());
 
   const isHovering = useInternalHover ? internalHovering : isHoveringProp;
 

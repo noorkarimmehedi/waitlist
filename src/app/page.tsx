@@ -120,6 +120,7 @@ export default function Home() {
                       ROW_DELAY * index
                     }
                     img={project.img}
+                    imgAlt={`${project.title} project thumbnail`}
                     showImage={true}
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}

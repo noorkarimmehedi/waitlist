@@ -8,6 +8,7 @@ interface ScrambleCombinedPairProps {
   leftText: string;
   rightText: string;
   img?: string;
+  imgAlt?: string;
   delay?: number;
   scrambleSpeed?: number;
   scrambledLetterCount?: number;
@@ -26,6 +27,7 @@ const ScrambleCombinedPair = forwardRef<
       leftText,
       rightText,
       img,
+      imgAlt,
       delay = 0,
       scrambleSpeed = 50,
       scrambledLetterCount = 4,
@@ -64,6 +66,7 @@ const ScrambleCombinedPair = forwardRef<
               <div className="hidden sm:flex sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-36 xl:h-36 sm:right-0 md:right-[25%] bottom-0 absolute">
                 <img
                   src={img}
+                  alt={imgAlt}
                   className="absolute right-0 top-0 h-full w-full object-cover"
                 />
               </div>
