@@ -11,7 +11,6 @@ interface ScrambleCombinedProps {
   scrambledLetterCount?: number;
   characters?: string;
   className?: string;
-  scrambledClassName?: string;
 }
 
 const ScrambleCombined = forwardRef<ScrambleInHandle, ScrambleCombinedProps>(
@@ -23,7 +22,6 @@ const ScrambleCombined = forwardRef<ScrambleInHandle, ScrambleCombinedProps>(
       scrambledLetterCount = 5,
       characters = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
       className,
-      scrambledClassName,
     },
     ref
   ) => {
@@ -35,7 +33,6 @@ const ScrambleCombined = forwardRef<ScrambleInHandle, ScrambleCombinedProps>(
         characters={characters}
         useOriginalCharsOnly
         className={className}
-        scrambledClassName={scrambledClassName}
         useInternalHover={true}
       >
         {children}
@@ -48,7 +45,6 @@ const ScrambleCombined = forwardRef<ScrambleInHandle, ScrambleCombinedProps>(
         scrambledLetterCount={scrambledLetterCount}
         characters={characters}
         className={className}
-        scrambledClassName={scrambledClassName}
         onComplete={() => setIsInComplete(true)}
       >
         {children}

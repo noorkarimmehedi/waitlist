@@ -50,7 +50,8 @@ import {
         if (typeof child === 'string') return child;
         if (isValidElement(child)) {
           // Recursively get text content from nested elements
-          // @ts-expect-error
+          // @ts-expect-error - child.props.children may not exist on all React element types,
+          // but we handle undefined case by returning empty string
           return child.props.children || '';
         }
         return '';
@@ -164,7 +165,7 @@ import {
             );
           }
           if (isValidElement(child)) {
-            // @ts-expect-error
+            // @ts-expect-error - child.props.children may not exist on all React element types,
             const childText = child.props.children
             const childLength = typeof childText === 'string' ? childText.length : 0;
             const childRevealed = revealed.slice(currentIndex, currentIndex + childLength);
@@ -172,7 +173,8 @@ import {
             currentIndex += childLength;
   
             return cloneElement(child, {
-              ...child.props as any,
+              // @ts-expect-error - child.props may not exist on all React element types,
+              ...child.props,
               children: (
                 <>
                   <span className={className}>{childRevealed}</span>

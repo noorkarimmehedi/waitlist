@@ -14,7 +14,6 @@ interface ScrambleCombinedPairProps {
   characters?: string;
   className?: string;
   showImage?: boolean;
-  scrambledClassName?: string;
   containerClassName?: string;
 }
 
@@ -32,7 +31,6 @@ const ScrambleCombinedPair = forwardRef<
       scrambledLetterCount = 4,
       characters = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
       className,
-      scrambledClassName,
       showImage = false,
       containerClassName,
     },
