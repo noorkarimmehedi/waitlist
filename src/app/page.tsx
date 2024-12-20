@@ -1,101 +1,183 @@
-import Image from "next/image";
+import ScrambleCombined from "@/components/scramble-combined";
+import ScrambleIn from "@/components/scramble-in";
+import ScrambleCombinedPair from "@/components/scramble-combined-pair";
+import { experiences, projects, socials } from "@/data/content";
+
+const ROW_DELAY = 30;
+const SCRAMBLE_SPEED = 30;
+const SCRAMBLED_LETTER_COUNT = 5;
+
+const getAnimationDuration = (text: string) => {
+  return Math.min((text.length - SCRAMBLED_LETTER_COUNT) * SCRAMBLE_SPEED, 100);
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-[#fefefe] text-black p-6 sm:p-8 md:p-10 lg:p-12 font-normal text-[3.5vw] sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl">
+      <div className="max-w-screen-2xl mx-auto flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14">
+        {/* Header - Row 1 */}
+        <div className="flex mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <h1>
+              <ScrambleCombined
+                delay={0}
+                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                scrambleSpeed={SCRAMBLE_SPEED}
+              >
+                daniel petho
+              </ScrambleCombined>
+            </h1>
+          </div>
+          <div className="">
+            <p>
+              <ScrambleIn
+                delay={getAnimationDuration("daniel petho")}
+                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                scrambleSpeed={SCRAMBLE_SPEED}
+              >
+                design ✴ tech ∿ build ◳
+              </ScrambleIn>
+            </p>
+            <a
+              href="https://nand.io"
+              target="_blank"
+              className="cursor-pointer border-b-2 border-transparent hover:border-foreground pb-1"
+            >
+              <ScrambleCombined
+                delay={getAnimationDuration("daniel petho") + ROW_DELAY}
+                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                scrambleSpeed={SCRAMBLE_SPEED}
+              >
+                design engineer @ studio nand
+              </ScrambleCombined>
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Previous Experience */}
+        <div className="flex">
+          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <ScrambleIn
+              delay={ROW_DELAY * 3}
+              scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+              scrambleSpeed={SCRAMBLE_SPEED}
+            >
+              prev
+            </ScrambleIn>
+          </div>
+          <div className="flex-1">
+            {experiences.map((exp, index) => (
+              <a
+                href={exp.links}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+              >
+                <ScrambleCombinedPair
+                  key={index}
+                  leftText={exp.title}
+                  rightText={exp.year}
+                  delay={
+                    ROW_DELAY * 3 +
+                    getAnimationDuration("daniel petho") +
+                    ROW_DELAY * index
+                  }
+                  scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                  scrambleSpeed={SCRAMBLE_SPEED}
+                  containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer md:py-1"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Projects */}
+        <div className="flex">
+          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <ScrambleIn
+              delay={ROW_DELAY * 7}
+              scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+              scrambleSpeed={SCRAMBLE_SPEED}
+            >
+              projects
+            </ScrambleIn>
+          </div>
+          <ul className="flex-1">
+            {projects.map((project, index) => (
+              <li key={index}>
+                <a
+                  href={project.links}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ScrambleCombinedPair
+                    key={index}
+                    leftText={project.title}
+                    rightText={project.year}
+                    delay={
+                      ROW_DELAY * 7 +
+                      getAnimationDuration("daniel petho") +
+                      ROW_DELAY * index
+                    }
+                    img={project.img}
+                    showImage={true}
+                    scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                    scrambleSpeed={SCRAMBLE_SPEED}
+                    containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer md:py-1"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div className="flex">
+          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <ScrambleIn
+              delay={ROW_DELAY * 15}
+              scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+              scrambleSpeed={SCRAMBLE_SPEED}
+            >
+              contact
+            </ScrambleIn>
+          </div>
+          <ul>
+            <li>
+              <ScrambleIn
+                delay={ROW_DELAY * 15 + getAnimationDuration("daniel petho")}
+                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                scrambleSpeed={SCRAMBLE_SPEED}
+              >
+                hello@danielpetho.com
+              </ScrambleIn>
+            </li>
+            <br />
+            {socials.map((social, index) => (
+              <li key={index}>
+                <a
+                  href={social.links}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground md:py-1 inline-block"
+                >
+                  <ScrambleCombined
+                    delay={
+                      ROW_DELAY * 17 +
+                      getAnimationDuration("daniel petho") +
+                      ROW_DELAY * index
+                    }
+                    scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                    scrambleSpeed={SCRAMBLE_SPEED}
+                  >
+                    {social.name}
+                  </ScrambleCombined>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </main>
   );
 }
