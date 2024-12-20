@@ -50,7 +50,7 @@ import {
         if (typeof child === 'string') return child;
         if (isValidElement(child)) {
           // Recursively get text content from nested elements
-          // @ts-ignore
+          // @ts-expect-error
           return child.props.children || '';
         }
         return '';
@@ -164,7 +164,7 @@ import {
             );
           }
           if (isValidElement(child)) {
-            // @ts-ignore
+            // @ts-expect-error
             const childText = child.props.children
             const childLength = typeof childText === 'string' ? childText.length : 0;
             const childRevealed = revealed.slice(currentIndex, currentIndex + childLength);

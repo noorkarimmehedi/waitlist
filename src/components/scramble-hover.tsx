@@ -45,7 +45,7 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
     .map((child) => {
       if (typeof child === "string") return child;
       if (isValidElement(child)) {
-        // @ts-ignore
+        // @ts-expect-error
         return child.props.children || "";
       }
       return "";
@@ -226,7 +226,7 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
       }
 
       if (isValidElement(child)) {
-        // @ts-ignore
+        // @ts-expect-error
         const childText = child.props.children || "";
         const childLength =
           typeof childText === "string" ? childText.length : 0;
@@ -236,7 +236,7 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
         currentIndex += childLength;
 
         return cloneElement(child, {
-          // @ts-ignore
+          // @ts-expect-error
           ...child.props,
           children: chars.map((char, i) => (
             <span
