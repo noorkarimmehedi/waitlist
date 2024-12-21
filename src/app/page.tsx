@@ -14,7 +14,9 @@ const getAnimationDuration = (text: string) => {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fefefe] text-black p-6 sm:p-8 md:p-10 lg:p-12 font-normal text-[3.5vw] sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl">
-      <div className="max-w-screen-2xl mx-auto flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14">
+      <div>
+      <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14">
+
         {/* Header - Row 1 */}
         <div className="flex mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
           <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
@@ -51,7 +53,9 @@ export default function Home() {
                 design engineer @ studio nand
               </ScrambleCombined>
             </a>
+            
           </div>
+          
         </div>
 
         {/* Previous Experience */}
@@ -178,6 +182,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
+      </div>
       </div>
     </main>
   );

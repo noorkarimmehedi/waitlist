@@ -30,6 +30,12 @@ export const projects = [
     img: "./img/ar.webp"
   },
   {
+    title: "prev. portfolio",
+    year: "2024",
+    links: "https://2024.danielpetho.com",
+    img: "./img/prev.webp"
+  },
+  {
     title: "pool group *xorxor",
     year: "2023",
     links: "https://medencecsoport.hu/",
@@ -64,12 +70,6 @@ export const projects = [
     year: "2021",
     links: "https://www.youtube.com/watch?v=Cft0Ea__Ezs",
     img: "./img/streiflicht.webp"
-  },
-  {
-    title: "prev. portfolio",
-    year: "2024",
-    links: "https://2024.danielpetho.com",
-    img: "./img/prev.webp"
   }
 ];
 
