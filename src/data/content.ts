@@ -36,13 +36,13 @@ export const projects = [
     img: "./img/prev.webp"
   },
   {
-    title: "pool group *xorxor",
+    title: "pool group＊xorxor",
     year: "2023",
     links: "https://medencecsoport.hu/",
     img: "./img/pool.webp"
   },
   {
-    title: "vodafone lobby *xorxor",
+    title: "vodafone lobby＊xorxor",
     year: "2023",
     links: "https://xorxor.hu/projects/vodafone-dataviz.html",
     img: "./img/vodafone.webp"
@@ -54,19 +54,19 @@ export const projects = [
     img: "./img/terrestrial.webp"
   },
   {
-    title: "skanzen transylvania *xorxor",
+    title: "skanzen transylvania＊xorxor",
     year: "2022",
     links: "https://xorxor.hu/projects/Skanzen.html",
     img: "./img/skanzen.webp"
   },
   {
-    title: "gazelle flip — music video *extrawelt ",
+    title: "gazelle flip — video＊extrawelt ",
     year: "2021",
     links: "https://www.youtube.com/watch?v=NY1mWQIqTBU",
     img: "./img/gazelle.webp"
   },
   {
-    title: "streiflicht — music video *extrawelt",
+    title: "streiflicht — video＊extrawelt",
     year: "2021",
     links: "https://www.youtube.com/watch?v=Cft0Ea__Ezs",
     img: "./img/streiflicht.webp"

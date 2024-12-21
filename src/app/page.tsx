@@ -2,6 +2,7 @@ import ScrambleCombined from "@/components/scramble-combined";
 import ScrambleIn from "@/components/scramble-in";
 import ScrambleCombinedPair from "@/components/scramble-combined-pair";
 import { experiences, projects, socials } from "@/data/content";
+import Star from "@/components/star";
 
 const ROW_DELAY = 30;
 const SCRAMBLE_SPEED = 30;
@@ -13,13 +14,13 @@ const getAnimationDuration = (text: string) => {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black p-6 sm:p-8 md:p-10 lg:p-12 font-normal text-[3.5vw] sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl">
+    <main className="min-h-screen bg-[#fefefe] text-black px-4 pt-10 sm:px-2 sm:pt-10 md:pt-10 lg:pt-12 md:p-10 lg:p-12 font-normal text-[4vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight">
       <div>
       <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14">
 
         {/* Header - Row 1 */}
         <div className="flex mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <div className="w-[30%]  text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
             <h1>
               <ScrambleCombined
                 delay={0}
@@ -37,7 +38,7 @@ export default function Home() {
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                 scrambleSpeed={SCRAMBLE_SPEED}
               >
-                design ✴ tech ∿ build ◳
+                design ✺ tech ∿ build ◳
               </ScrambleIn>
             </h1>
             <a
@@ -60,7 +61,7 @@ export default function Home() {
 
         {/* Previous Experience */}
         <div className="flex">
-          <h2 className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <h2 className="w-[30%] text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
             <ScrambleIn
               delay={ROW_DELAY * 3}
               scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -88,7 +89,7 @@ export default function Home() {
                   }
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
-                  containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer md:py-1"
+                  containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer py-0 md:py-0.5 lg:py-1"
                 />
               </a>
             ))}
@@ -97,7 +98,7 @@ export default function Home() {
 
         {/* Projects */}
         <div className="flex">
-          <h2 className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <h2 className="w-[30%] text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
             <ScrambleIn
               delay={ROW_DELAY * 7}
               scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -128,7 +129,7 @@ export default function Home() {
                     showImage={true}
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}
-                    containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer md:py-1"
+                    containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer py-0 md:py-0.5 lg:py-1"
                   />
                 </a>
               </li>
@@ -138,7 +139,7 @@ export default function Home() {
 
         {/* Contact */}
         <div className="flex">
-          <h2 className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <h2 className="w-[30%] text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
             <ScrambleIn
               delay={ROW_DELAY * 15}
               scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -164,7 +165,7 @@ export default function Home() {
                   href={social.links}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground md:py-1 inline-block"
+                  className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground py-0 md:py-0.5 lg:py-1 inline-block"
                 >
                   <ScrambleCombined
                     delay={
