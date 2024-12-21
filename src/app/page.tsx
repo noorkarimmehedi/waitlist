@@ -2,7 +2,6 @@ import ScrambleCombined from "@/components/scramble-combined";
 import ScrambleIn from "@/components/scramble-in";
 import ScrambleCombinedPair from "@/components/scramble-combined-pair";
 import { experiences, projects, socials } from "@/data/content";
-import Star from "@/components/star";
 
 const ROW_DELAY = 30;
 const SCRAMBLE_SPEED = 30;
@@ -14,7 +13,7 @@ const getAnimationDuration = (text: string) => {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black px-4 pt-10 sm:px-2 sm:pt-10 md:pt-10 lg:pt-12 md:p-10 lg:p-12 font-normal text-[4vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight">
+    <main className="min-h-screen bg-[#fefefe] text-black px-4 pt-10 sm:px-2 sm:pt-10 md:pt-10 lg:pt-12 md:p-10 lg:p-12 font-normal text-[4vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-none">
       <div>
       <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14">
 
