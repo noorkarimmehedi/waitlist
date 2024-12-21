@@ -42,6 +42,12 @@ export const projects = [
     img: "./img/vodafone.webp"
   },
   {
+    title: "terrestrial",
+    year: "2022",
+    links: "https://github.com/danielpetho/terrestrial-fxhash-tutorial",
+    img: "./img/terrestrial.webp"
+  },
+  {
     title: "skanzen transylvania *xorxor",
     year: "2022",
     links: "https://xorxor.hu/projects/Skanzen.html",

@@ -29,7 +29,7 @@ export default function Home() {
             </h1>
           </div>
           <div className="">
-            <p>
+            <h1>
               <ScrambleIn
                 delay={getAnimationDuration("daniel petho")}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -37,7 +37,7 @@ export default function Home() {
               >
                 design ✴ tech ∿ build ◳
               </ScrambleIn>
-            </p>
+            </h1>
             <a
               href="https://nand.io"
               target="_blank"
@@ -56,7 +56,7 @@ export default function Home() {
 
         {/* Previous Experience */}
         <div className="flex">
-          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <h2 className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
             <ScrambleIn
               delay={ROW_DELAY * 3}
               scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -64,7 +64,7 @@ export default function Home() {
             >
               prev
             </ScrambleIn>
-          </div>
+          </h2>
           <div className="flex-1">
             {experiences.map((exp, index) => (
               <a
@@ -93,7 +93,7 @@ export default function Home() {
 
         {/* Projects */}
         <div className="flex">
-          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <h2 className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
             <ScrambleIn
               delay={ROW_DELAY * 7}
               scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -101,7 +101,7 @@ export default function Home() {
             >
               projects
             </ScrambleIn>
-          </div>
+          </h2>
           <ul className="flex-1">
             {projects.map((project, index) => (
               <li key={index}>
@@ -134,7 +134,7 @@ export default function Home() {
 
         {/* Contact */}
         <div className="flex">
-          <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <h2 className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-[22%]">
             <ScrambleIn
               delay={ROW_DELAY * 15}
               scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -142,7 +142,7 @@ export default function Home() {
             >
               contact
             </ScrambleIn>
-          </div>
+          </h2>
           <ul>
             <li>
               <ScrambleIn

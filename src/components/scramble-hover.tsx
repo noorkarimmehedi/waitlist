@@ -266,7 +266,8 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
       className={cn("inline-block whitespace-pre-wrap", className)}
       {...props}
     >
-      {renderText()}
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true">{renderText()}</span>
     </motion.span>
   );
 };

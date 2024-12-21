@@ -188,7 +188,10 @@ import {
       };
   
       return (
-        <span className="inline-block whitespace-pre-wrap">{renderText()}</span>
+        <span className="inline-block whitespace-pre-wrap">
+          <span className="sr-only">{text}</span>
+          <span aria-hidden="true">{renderText()}</span>
+        </span>
       );
     }
   );
