@@ -25,6 +25,20 @@ interface ScrambleHoverProps {
   useInternalHover?: boolean;
 }
 
+const extractTextFromChildren = (children: React.ReactNode): string => {
+  return Children.toArray(children)
+    .map(child => {
+      if (typeof child === 'string') return child;
+      if (typeof child === 'number') return String(child);
+      if (isValidElement(child)) {
+        // @ts-expect-error - child.props.children may not exist on all React element types,
+        return extractTextFromChildren(child.props.children);
+      }
+      return '';
+    })
+    .join('');
+};
+
 const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   children,
   scrambleSpeed = 50,
@@ -40,17 +54,8 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   useInternalHover = false,
   ...props
 }) => {
-  // Convert children to text for scrambling logic
-  const text = Children.toArray(children)
-    .map((child) => {
-      if (typeof child === "string") return child;
-      if (isValidElement(child)) {
-        // @ts-expect-error - child.props.children may not exist on all React element types,
-        return child.props.children || "";
-      }
-      return "";
-    })
-    .join("");
+  // Replace existing text extraction
+  const text = extractTextFromChildren(children);
 
   const [displayText, setDisplayText] = useState(text);
   const [isScrambling, setIsScrambling] = useState(false);
@@ -201,19 +206,18 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   const renderText = () => {
     let currentIndex = 0;
 
-    return Children.map(children, (child) => {
-      if (typeof child === "string") {
-        const childLength = child.length;
+    const processNode = (node: React.ReactNode): React.ReactNode => {
+      if (typeof node === 'string' || typeof node === 'number') {
+        const nodeText = String(node);
+        const nodeLength = nodeText.length;
         const chars = displayText
-          .slice(currentIndex, currentIndex + childLength)
-          .split("");
-        currentIndex += childLength;
-
-        return chars.map((char, i) => (
+          .slice(currentIndex, currentIndex + nodeLength)
+          .split('');
+        const result = chars.map((char, i) => (
           <span
-            key={currentIndex - childLength + i}
+            key={currentIndex + i}
             className={cn(
-              revealedIndices.has(currentIndex - childLength + i) ||
+              revealedIndices.has(currentIndex + i) ||
                 !isScrambling ||
                 !isHovering
                 ? className
@@ -223,40 +227,23 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
             {char}
           </span>
         ));
+        currentIndex += nodeLength;
+        return result;
       }
 
-      if (isValidElement(child)) {
-        // @ts-expect-error - child.props.children may not exist on all React element types,
-        const childText = child.props.children || "";
-        const childLength =
-          typeof childText === "string" ? childText.length : 0;
-        const chars = displayText
-          .slice(currentIndex, currentIndex + childLength)
-          .split("");
-        currentIndex += childLength;
-
-        return cloneElement(child, {
-          // @ts-expect-error - child.props may not exist on all React element types,
-          ...child.props,
-          children: chars.map((char, i) => (
-            <span
-              key={currentIndex - childLength + i}
-              className={cn(
-                revealedIndices.has(currentIndex - childLength + i) ||
-                  !isScrambling ||
-                  !isHovering
-                  ? className
-                  : scrambledClassName
-              )}
-            >
-              {char}
-            </span>
-          )),
+      if (isValidElement(node)) {
+        return cloneElement(node, {
+          // @ts-expect-error - node.props.children may not exist on all React element types,
+          ...node.props,
+          // @ts-expect-error - node.props may not exist on all React element types,
+          children: Children.map(node.props.children, child => processNode(child))
         });
       }
 
-      return null;
-    });
+      return node;
+    };
+
+    return Children.map(children, child => processNode(child));
   };
 
   return (

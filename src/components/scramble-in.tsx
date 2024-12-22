@@ -29,6 +29,20 @@ import {
     reset: () => void;
   }
   
+  const extractTextFromChildren = (children: React.ReactNode): string => {
+    return Children.toArray(children)
+      .map(child => {
+        if (typeof child === 'string') return child;
+        if (typeof child === 'number') return String(child);
+        if (isValidElement(child)) {
+          // @ts-expect-error - child.props.children may not exist on all React element types,
+          return extractTextFromChildren(child.props.children);
+        }
+        return '';
+      })
+      .join('');
+  };
+  
   const ScrambleIn = forwardRef<ScrambleInHandle, ScrambleInProps>(
     (
       {
@@ -45,18 +59,7 @@ import {
       },
       ref
     ) => {
-      const text = Children.toArray(children)
-      .map(child => {
-        if (typeof child === 'string') return child;
-        if (isValidElement(child)) {
-          // Recursively get text content from nested elements
-          // @ts-expect-error - child.props.children may not exist on all React element types,
-          // but we handle undefined case by returning empty string
-          return child.props.children || '';
-        }
-        return '';
-      })
-      .join('');
+      const text = extractTextFromChildren(children);
 
       const [displayText, setDisplayText] = useState("");
       const [isAnimating, setIsAnimating] = useState(false);
@@ -150,41 +153,35 @@ import {
         const revealed = displayText.slice(0, visibleLetterCount);
         const scrambled = displayText.slice(visibleLetterCount);
   
-        return Children.map(children, (child) => {
-          if (typeof child === 'string') {
-            const childLength = child.length;
-            const childRevealed = revealed.slice(currentIndex, currentIndex + childLength);
-            const childScrambled = scrambled.slice(currentIndex, currentIndex + childLength);
-            currentIndex += childLength;
+        const processNode = (node: React.ReactNode): React.ReactNode => {
+          if (typeof node === 'string' || typeof node === 'number') {
+            const nodeText = String(node);
+            const nodeLength = nodeText.length;
+            const nodeRevealed = revealed.slice(currentIndex, currentIndex + nodeLength);
+            const nodeScrambled = scrambled.slice(currentIndex, currentIndex + nodeLength);
+            currentIndex += nodeLength;
   
             return (
               <>
-                <span className={className}>{childRevealed}</span>
-                <span className={scrambledClassName}>{childScrambled}</span>
+                <span className={className}>{nodeRevealed}</span>
+                <span className={scrambledClassName}>{nodeScrambled}</span>
               </>
             );
           }
-          if (isValidElement(child)) {
-            // @ts-expect-error - child.props.children may not exist on all React element types,
-            const childText = child.props.children
-            const childLength = typeof childText === 'string' ? childText.length : 0;
-            const childRevealed = revealed.slice(currentIndex, currentIndex + childLength);
-            const childScrambled = scrambled.slice(currentIndex, currentIndex + childLength);
-            currentIndex += childLength;
   
-            return cloneElement(child, {
-              // @ts-expect-error - child.props may not exist on all React element types,
-              ...child.props,
-              children: (
-                <>
-                  <span className={className}>{childRevealed}</span>
-                  <span className={scrambledClassName}>{childScrambled}</span>
-                </>
-              ),
+          if (isValidElement(node)) {
+            return cloneElement(node, {
+              // @ts-expect-error - node.props.children may not exist on all React element types,
+              ...node.props,
+              // @ts-expect-error - node.props may not exist on all React element types,
+              children: Children.map(node.props.children, child => processNode(child))
             });
           }
-          return null;
-        });
+  
+          return node;
+        };
+  
+        return Children.map(children, child => processNode(child));
       };
   
       return (

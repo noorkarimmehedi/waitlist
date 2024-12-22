@@ -5,8 +5,9 @@ import ScrambleHover from "./scramble-hover";
 import ScrambleIn, { ScrambleInHandle } from "./scramble-in";
 
 interface ScrambleCombinedPairProps {
-  leftText: string;
-  rightText: string;
+  leftText: React.ReactNode;
+  leftTextString: string;
+  rightText: React.ReactNode;
   img?: string;
   imgAlt?: string;
   delay?: number;
@@ -25,6 +26,7 @@ const ScrambleCombinedPair = forwardRef<
   (
     {
       leftText,
+      leftTextString,
       rightText,
       img,
       imgAlt,
@@ -50,7 +52,7 @@ const ScrambleCombinedPair = forwardRef<
         onMouseLeave={() => setIsHovering(false)}
       >
         {bothComplete ? (
-          <div className="flex justify-between w-full relative">
+          <div className="flex justify-between w-full relative flex-1 whitespace-pre">
             <ScrambleHover
               scrambleSpeed={scrambleSpeed * 1.3}
               characters={characters}
@@ -63,7 +65,7 @@ const ScrambleCombinedPair = forwardRef<
             </ScrambleHover>
 
             {isHovering && showImage && (
-              <div className="hidden sm:flex sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-36 xl:h-36 sm:right-0 md:right-[12%] bottom-0 absolute">
+              <div className="hidden md:flex sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-36 xl:h-36 sm:right-0 md:right-[12%] bottom-0 absolute">
                 <img
                   src={img}
                   alt={imgAlt}
@@ -84,7 +86,7 @@ const ScrambleCombinedPair = forwardRef<
             </ScrambleHover>
           </div>
         ) : (
-          <div className="flex justify-between flex-row w-full">
+          <div className="flex justify-between flex-row w-full ">
             <ScrambleIn
               ref={ref}
               delay={delay}
@@ -98,7 +100,7 @@ const ScrambleCombinedPair = forwardRef<
             </ScrambleIn>
 
             <ScrambleIn
-              delay={delay + getAnimationDuration(leftText)}
+              delay={delay + getAnimationDuration(leftTextString)}
               scrambleSpeed={scrambleSpeed}
               scrambledLetterCount={scrambledLetterCount}
               characters={characters}
