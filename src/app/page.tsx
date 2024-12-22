@@ -13,7 +13,7 @@ const getAnimationDuration = (text: string) => {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black pl-4 lr-0 pt-10 sm:px-2 sm:pt-10 md:pt-10 lg:pt-12 md:p-10 lg:p-12 font-normal text-[4.9vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight sm:leading-tight">
+    <main className="min-h-screen bg-[#fefefe] text-black pl-4 lr-0 pt-10 pb-10 sm:px-2 sm:pt-10 sm:pb-10 md:pt-10 md:pb-10 lg:pt-12 lg:pb-12 md:p-10 lg:p-12 font-normal text-[4.9vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight sm:leading-tight">
       <div>
         <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14">
           {/* Header - Row 1 */}
