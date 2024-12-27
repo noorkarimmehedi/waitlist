@@ -24,6 +24,12 @@ export const projects = [
     img: "./img/fancy.webp"
   },
   {
+    title: "lock in 2025",
+    year: "2024",
+    links: "https://lock-in.danielpetho.com",
+    img: "./img/lock-in.webp"
+  },
+  {
     title: "ar filters",
     year: "2024",
     links: "https://2024.danielpetho.com/lab/filters",
