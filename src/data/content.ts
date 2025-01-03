@@ -96,12 +96,12 @@ export const socials = [
     name: "instagram",
     links: "https://instagram.com/nonzeroexitcode"
   },
-  // {
-  //   name: "threads",
-  //   links: "https://threads.net/@danielpetho"
-  // },
   {
     name: "bluesky",
     links: "https://bsky.app/profile/danielpetho.bsky.social"
-  }
+  },
+  {
+    name: "threads",
+    links: "https://threads.net/@danielpetho"
+  },
 ];

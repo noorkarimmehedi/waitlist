@@ -99,7 +99,7 @@ export default function Home() {
                     }
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}
-                    containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer pb-0.5 md:pb-0.5 lg:pb-1"
+                    containerClassName="group justify-between border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer pb-0.5 md:pb-0.5 lg:pb-1"
                   />
                 </a>
               ))}
@@ -148,7 +148,7 @@ export default function Home() {
                       showImage={true}
                       scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                       scrambleSpeed={SCRAMBLE_SPEED}
-                      containerClassName="group justify-between transition-colors border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer pb-0.5 md:pb-0.5 lg:pb-1"
+                      containerClassName="group justify-between border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer pb-0.5 md:pb-0.5 lg:pb-1"
                     />
                   </a>
                 </li>
