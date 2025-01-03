@@ -102,6 +102,6 @@ export const socials = [
   },
   {
     name: "threads",
-    links: "https://threads.net/@danielpetho"
+    links: "https://threads.net/@nonzeroexitcode"
   },
 ];
