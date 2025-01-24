@@ -25,7 +25,7 @@ export const projects = [
   },
   {
     title: "unbaited",
-    year: "2025",
+    year: "now",
     links: "https://unbaited.danielpetho.com",
     img: "./img/unbaited.webp"
   },
