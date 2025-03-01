@@ -12,7 +12,7 @@ export default function Home() {
         <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-16 sm:gap-18 md:gap-20 lg:gap-28">
           {/* Header - Row 1 */}
           <div className="flex flex-col sm:flex-row mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-            <div className="w-full mb-3 sm:mb-0 sm:text-right sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <div className="w-full mb-[2vw] sm:mb-0 sm:text-right sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <h1>
                 <ScrambleCombined
                   delay={0}
@@ -58,7 +58,7 @@ export default function Home() {
 
           {/* Newsletter */}
           <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-3 sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <ScrambleIn
                 delay={ROW_DELAY * 3 + getAnimationDuration("daniel petho")}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -75,7 +75,7 @@ export default function Home() {
 
           {/* Previous Experience */}
           <div className="flex sm:flex-row flex-col">
-            <h2 className="w-full sm:text-right mb-3 sm:mb-0 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <h2 className="w-full sm:text-right mb-[2vw] sm:mb-0 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <ScrambleIn
                 delay={ROW_DELAY * 3}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -121,7 +121,7 @@ export default function Home() {
 
           {/* Projects */}
           <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-3 sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <ScrambleIn
                 delay={ROW_DELAY * 7}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -171,7 +171,7 @@ export default function Home() {
 
           {/* Contact */}
           <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-3 sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <ScrambleIn
                 delay={ROW_DELAY * 15}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}

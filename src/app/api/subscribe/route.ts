@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
-import { EmailTemplate } from "@/components/email-template";
+import { WelcomeEmail } from "../../../../emails/welcome-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const audienceId = process.env.RESEND_AUDIENCE_ID!;
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       from: 'daniel <hi@dtb.danielpetho.com>',
       to: emailToUse,
       subject: 'Welcome to my newsletter!',
-      react: EmailTemplate({ firstName: emailToUse.split('@')[0] }),
+      react: WelcomeEmail(),
     });
 
     return NextResponse.json(
