@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, forwardRef } from "react";
+import { useState, forwardRef, useRef, useEffect } from "react";
 import ScrambleHover from "./scramble-hover";
 import ScrambleIn, { ScrambleInHandle } from "./scramble-in";
+import { useElementPosition } from "@/hooks/use-element-position";
 
 interface ScrambleCombinedPairProps {
   leftText: React.ReactNode;
@@ -44,12 +45,23 @@ const ScrambleCombinedPair = forwardRef<
     const [rightComplete, setRightComplete] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
     const bothComplete = leftComplete && rightComplete;
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const elementPosition = useElementPosition(containerRef as React.RefObject<HTMLElement>);
+
+    useEffect(() => {
+      if (elementPosition) {
+        console.log(elementPosition);
+      }
+    }, [elementPosition]);
+
 
     return (
       <div
         className={containerClassName}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
+        ref={containerRef}
       >
         {bothComplete ? (
           <div className="flex justify-between w-full relative flex-1 whitespace-pre">

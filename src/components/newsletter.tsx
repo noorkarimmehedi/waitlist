@@ -1,0 +1,130 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import ScrambleIn from "./scramble-in";
+import ScrambleCombined from "./scramble-combined";
+import { motion } from "framer-motion";
+import {
+  getAnimationDuration,
+  ROW_DELAY,
+  SCRAMBLE_SPEED,
+  SCRAMBLED_LETTER_COUNT,
+} from "@/lib/utils";
+
+export default function Newsletter({ delay = 0 }: { delay?: number }) {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [showScrambledPlaceholder, setShowScrambledPlaceholder] =
+    useState(true);
+  const [loadingIcon, setLoadingIcon] = useState("◴");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    // Start loading animation
+    const icons = ["◴", "◷", "◶", "◵"];
+    let i = 0;
+    const interval = setInterval(() => {
+      i = (i + 1) % icons.length;
+      setLoadingIcon(icons[i]);
+    }, 100);
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.status === 200) {
+        setStatus("success");
+        setEmail("");
+        
+        // Clear loading animation
+        clearInterval(interval);
+        
+        // Reset status after success
+        setTimeout(() => {
+          setStatus("idle");
+        }, 2000);
+      } else {
+        setStatus("error");
+        clearInterval(interval);
+      }
+    } catch (error) {
+      setStatus("error");
+      clearInterval(interval);
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="flex sm:flex-1 flex-row gap-4 lowercase sm:w-full"
+    >
+      <div className="relative md:w-full flex">
+        <div className="relative flex w-full">
+          <input
+            type="email"
+            value={email}
+            placeholder={showScrambledPlaceholder ? "" : "enter your email"}
+            aria-label="Enter your email address to subscribe to the newsletter"
+            onChange={(e) => setEmail(e.target.value)}
+            className="bg-transparent focus:outline-none pb-[1.5vw] sm:pb-1.5 md:pb-2 md:w-full"
+            required
+          />
+          {showScrambledPlaceholder && email.length === 0 && (
+            <div className="absolute top-0 left-0 pointer-events-none text-black/40 overflow-hidden">
+              <ScrambleIn
+                delay={delay}
+                scrambleSpeed={SCRAMBLE_SPEED}
+                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                className="w-full truncate"
+                onComplete={() => setShowScrambledPlaceholder(false)}
+              >
+                enter your email
+              </ScrambleIn>
+            </div>
+          )}
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="self-start sm:w-36 md:w-64 sm:text-right"
+            aria-label="subscribe"
+          >
+            {status === "loading" ? (
+              <p>{loadingIcon}</p>
+            ) : status === "success" ? (
+              <p>done ✓</p>
+            ) : (
+              <ScrambleCombined
+                delay={showScrambledPlaceholder ? 0 : delay + getAnimationDuration("enter your email") * 2}
+                scrambleSpeed={SCRAMBLE_SPEED}
+                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+              >
+                subscribe ✉
+              </ScrambleCombined>
+            )}
+          </button>
+        </div>
+
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 border-t-[0.5vw] sm:border-t-[1.5px] md:border-t-2 border-solid border-black"
+          initial={{ scaleX: 1, width: "0%" }}
+          animate={{ scaleX: 1, width: "100%" }}
+          transition={{
+            delay: delay / 1000,
+            duration: 0.5,
+            type: "spring",
+            bounce: 0,
+          }}
+        />
+      </div>
+    </form>
+  );
+}
