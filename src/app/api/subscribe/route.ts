@@ -3,12 +3,13 @@ import { NextResponse } from "next/server";
 import { WelcomeEmail } from "../../../../emails/welcome-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const audienceId = process.env.RESEND_AUDIENCE_ID!;
 
 export async function POST(request: Request) {
   try {
     // For testing purposes
     const testEmail = "delivered@resend.dev";
+
+    const audienceId = process.env.RESEND_AUDIENCE_ID!;
     
     // Get email from request body for production use
     const { email } = await request.json();
