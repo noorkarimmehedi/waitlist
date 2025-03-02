@@ -3,7 +3,12 @@ import ScrambleIn from "@/components/scramble-in";
 import ScrambleCombinedPair from "@/components/scramble-combined-pair";
 import { experiences, projects, socials } from "@/data/content";
 import Newsletter from "@/components/newsletter";
-import { getAnimationDuration, ROW_DELAY, SCRAMBLE_SPEED, SCRAMBLED_LETTER_COUNT } from "@/lib/utils";
+import {
+  getAnimationDuration,
+  ROW_DELAY,
+  SCRAMBLE_SPEED,
+  SCRAMBLED_LETTER_COUNT,
+} from "@/lib/utils";
 
 export default function Home() {
   return (

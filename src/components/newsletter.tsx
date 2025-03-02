@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ScrambleIn from "./scramble-in";
 import ScrambleCombined from "./scramble-combined";
 import { motion } from "framer-motion";
 import {
   getAnimationDuration,
-  ROW_DELAY,
   SCRAMBLE_SPEED,
   SCRAMBLED_LETTER_COUNT,
 } from "@/lib/utils";

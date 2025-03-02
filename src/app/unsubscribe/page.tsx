@@ -83,7 +83,13 @@ export default function UnsubscribePage() {
             <p>an error occurred while unsubscribing ⚠</p>
             <p>
               please contact me at{" "}
-              <a href="mailto:hi@danielpetho.com" className="underline underline-offset-8">hi@danielpetho.com</a>.
+              <a
+                href="mailto:hi@danielpetho.com"
+                className="underline underline-offset-8"
+              >
+                hi@danielpetho.com
+              </a>
+              .
             </p>
           </div>
         )}
