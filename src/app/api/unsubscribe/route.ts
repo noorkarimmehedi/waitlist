@@ -16,7 +16,7 @@ export async function GET(request: Request) {
   }
 
   return NextResponse.redirect(
-    `http://localhost:3000/unsubscribe?email=${email}`
+    `http://danielpetho.com/unsubscribe?email=${email}`
   )
 }
 
