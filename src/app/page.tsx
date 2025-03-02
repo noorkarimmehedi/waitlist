@@ -36,7 +36,7 @@ export default function Home() {
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
                 >
-                  design ✺ tech ∿ build ◳
+                  design ✺&#xfe0e; tech ∿&#xfe0e; build ◳&#xfe0e;
                 </ScrambleIn>
               </h1>
               <a
@@ -87,7 +87,7 @@ export default function Home() {
                 scrambleSpeed={SCRAMBLE_SPEED}
                 className="font-bold"
               >
-                past
+                previous
               </ScrambleIn>
             </h2>
             <div className="flex-1 w-full">

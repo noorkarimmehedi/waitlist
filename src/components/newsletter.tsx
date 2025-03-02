@@ -54,19 +54,19 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
       onSubmit={handleSubmit}
       className="flex sm:flex-1 flex-row gap-4 lowercase sm:w-full"
     >
-      <div className="relative md:w-full flex">
-        <div className="relative flex w-full">
+      <div className="relative md:w-full flex items-center">
+        <div className="relative flex w-full items-center">
           <input
             type="email"
             value={email}
             placeholder={showScrambledPlaceholder ? "" : "enter your email"}
             aria-label="Enter your email address to subscribe to the newsletter"
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-transparent focus:outline-none pb-[1.5vw] sm:pb-1.5 md:pb-2 md:w-full"
+            className="bg-transparent focus:outline-none pb-[1.5vw] sm:pb-1.5 md:pb-2 md:w-full focus:bg-muted/20"
             required
           />
           {showScrambledPlaceholder && email.length === 0 && (
-            <div className="absolute top-0 left-0 pointer-events-none text-black/40 overflow-hidden">
+            <div className="absolute top-0 left-0  pointer-events-none text-black/40 overflow-hidden">
               <ScrambleIn
                 delay={delay}
                 scrambleSpeed={SCRAMBLE_SPEED}
@@ -100,7 +100,7 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
                 scrambleSpeed={SCRAMBLE_SPEED}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
               >
-                subscribe ✉
+                subscribe ⍈
               </ScrambleCombined>
             )}
           </button>
