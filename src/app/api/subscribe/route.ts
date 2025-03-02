@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     }
 
     // Use test email for testing, real email for production
-    const emailToUse = email//process.env.NODE_ENV === "development" ? testEmail : email;
+    const emailToUse = process.env.NODE_ENV === "development" ? testEmail : email;
     const existingContacts = await resend.contacts.list({ audienceId });
     const contactExists = existingContacts?.data?.data.some(
       (contact: { email: string }) => contact.email.toLowerCase() === emailToUse.toLowerCase()
@@ -56,8 +56,9 @@ export async function POST(request: Request) {
     );
 
   } catch (error) {
+    console.error('Unsubscribe error:', error)
     return NextResponse.json(
-      { error: "Error subscribing to newsletter" },
+      { error: "Error subscribing to newsletter"},
       { status: 500 }
     );
   }

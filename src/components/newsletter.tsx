@@ -56,6 +56,7 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
         clearInterval(interval);
       }
     } catch (error) {
+      console.error('Error submitting newsletter form:', error)
       setStatus("error");
       clearInterval(interval);
     }
