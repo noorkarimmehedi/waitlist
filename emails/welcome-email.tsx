@@ -11,12 +11,11 @@ import {
   Text,
 } from "@react-email/components";
 import * as React from "react";
-import { text } from "stream/consumers";
 
 const baseUrl =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : `https://${process.env.VERCEL_URL}`;
+    : `https://danielpetho.com`;
 
 export const WelcomeEmail = ({ email }: { email: string }) => (
   <Html style={{ width: "100%" }}>
