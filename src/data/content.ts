@@ -104,7 +104,7 @@ export const socials = [
   },
   {
     name: "bluesky",
-    links: "https://bsky.app/profile/danielpetho.bsky.social"
+    links: "https://bsky.app/profile/danielpetho.com"
   },
   {
     name: "threads",
