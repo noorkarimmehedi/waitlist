@@ -9,6 +9,7 @@ import {
   SCRAMBLE_SPEED,
   SCRAMBLED_LETTER_COUNT,
 } from "@/lib/utils";
+import LoadingSpinner from "./loading";
 
 export default function Newsletter({ delay = 0 }: { delay?: number }) {
   const [email, setEmail] = useState("");
@@ -17,19 +18,10 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
   >("idle");
   const [showScrambledPlaceholder, setShowScrambledPlaceholder] =
     useState(true);
-  const [loadingIcon, setLoadingIcon] = useState("◴");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-
-    // Start loading animation
-    const icons = ["◴", "◷", "◶", "◵"];
-    let i = 0;
-    const interval = setInterval(() => {
-      i = (i + 1) % icons.length;
-      setLoadingIcon(icons[i]);
-    }, 100);
 
     try {
       const response = await fetch("/api/subscribe", {
@@ -43,22 +35,17 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
       if (response.status === 200) {
         setStatus("success");
         setEmail("");
-        
-        // Clear loading animation
-        clearInterval(interval);
-        
+
         // Reset status after success
         setTimeout(() => {
           setStatus("idle");
         }, 2000);
       } else {
         setStatus("error");
-        clearInterval(interval);
       }
     } catch (error) {
-      console.error('Error submitting newsletter form:', error)
+      console.error("Error submitting newsletter form:", error);
       setStatus("error");
-      clearInterval(interval);
     }
   };
 
@@ -98,14 +85,18 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
             aria-label="subscribe"
           >
             {status === "loading" ? (
-              <p>{loadingIcon}</p>
+              <LoadingSpinner />
             ) : status === "success" ? (
               <p>done ✓</p>
             ) : status === "error" ? (
               <p className="text-red-500">error ⚠</p>
             ) : (
               <ScrambleCombined
-                delay={showScrambledPlaceholder ? 0 : delay + getAnimationDuration("enter your email") * 2}
+                delay={
+                  showScrambledPlaceholder
+                    ? 0
+                    : delay + getAnimationDuration("enter your email") * 2
+                }
                 scrambleSpeed={SCRAMBLE_SPEED}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
               >

@@ -1,28 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import LoadingSpinner from "@/components/loading";
 
-export default function UnsubscribePage() {
+const UnsubscribeContent = () => {
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
-  const [loadingIcon, setLoadingIcon] = useState("◴");
 
   const handleUnsubscribe = async () => {
     if (!email) return;
 
     setStatus("loading");
-
-    // Start loading animation
-    const icons = ["◴", "◷", "◶", "◵"];
-    let i = 0;
-    const interval = setInterval(() => {
-      i = (i + 1) % icons.length;
-      setLoadingIcon(icons[i]);
-    }, 100);
 
     try {
       const response = await fetch("/api/unsubscribe", {
@@ -37,11 +29,9 @@ export default function UnsubscribePage() {
         throw new Error("Failed to unsubscribe");
       }
 
-      clearInterval(interval);
       setStatus("success");
     } catch (err) {
-      console.error('Error unsubscribing:', err)
-      clearInterval(interval);
+      console.error("Error unsubscribing:", err);
       setStatus("error");
     }
   };
@@ -75,7 +65,7 @@ export default function UnsubscribePage() {
           </>
         )}
 
-        {status === "loading" && <span>{loadingIcon}</span>}
+        {status === "loading" && <LoadingSpinner />}
 
         {status === "success" && <span>done ✓</span>}
 
@@ -96,5 +86,19 @@ export default function UnsubscribePage() {
         )}
       </div>
     </div>
+  );
+};
+
+export default function UnsubscribePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center text-[4.9vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+          <LoadingSpinner />
+        </div>
+      }
+    >
+      <UnsubscribeContent />
+    </Suspense>
   );
 }
