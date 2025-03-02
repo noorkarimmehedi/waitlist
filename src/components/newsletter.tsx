@@ -94,8 +94,8 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
               <ScrambleCombined
                 delay={
                   showScrambledPlaceholder
-                    ? 0
-                    : delay + getAnimationDuration("enter your email") * 2
+                    ? delay + getAnimationDuration("enter your email") * 2
+                    : 0
                 }
                 scrambleSpeed={SCRAMBLE_SPEED}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}

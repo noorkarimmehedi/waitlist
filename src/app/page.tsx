@@ -74,7 +74,7 @@ export default function Home() {
               </ScrambleIn>
             </h2>
             <Newsletter
-              delay={ROW_DELAY * 3 + getAnimationDuration("daniel petho")}
+              delay={ROW_DELAY * 4 + getAnimationDuration("daniel petho")}
             />
           </div>
 
