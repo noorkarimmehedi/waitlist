@@ -188,7 +188,7 @@ export default function Home() {
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
                 >
-                  hello@danielpetho.com
+                  hi@danielpetho.com
                 </ScrambleIn>
               </li>
               <br />

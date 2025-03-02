@@ -101,6 +101,8 @@ export default function Newsletter({ delay = 0 }: { delay?: number }) {
               <p>{loadingIcon}</p>
             ) : status === "success" ? (
               <p>done ✓</p>
+            ) : status === "error" ? (
+              <p className="text-red-500">error ⚠</p>
             ) : (
               <ScrambleCombined
                 delay={showScrambledPlaceholder ? 0 : delay + getAnimationDuration("enter your email") * 2}

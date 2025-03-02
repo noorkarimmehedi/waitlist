@@ -21,7 +21,20 @@ export async function POST(request: Request) {
     }
 
     // Use test email for testing, real email for production
-    const emailToUse = process.env.NODE_ENV === "development" ? testEmail : email;
+    const emailToUse = email//process.env.NODE_ENV === "development" ? testEmail : email;
+    const existingContacts = await resend.contacts.list({ audienceId });
+    const contactExists = existingContacts?.data?.data.some(
+      (contact: { email: string }) => contact.email.toLowerCase() === emailToUse.toLowerCase()
+    );
+
+    console.log("contactExists", contactExists);
+
+    if (contactExists) {
+      return NextResponse.json(
+        { message: "Successfully subscribed" },
+        { status: 200 }
+      );
+    }
 
     await resend.contacts.create({
       email: emailToUse,
@@ -33,8 +46,8 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: 'daniel <hi@dtb.danielpetho.com>',
       to: emailToUse,
-      subject: 'Welcome to my newsletter!',
-      react: WelcomeEmail(),
+      subject: 'welcome',
+      react: WelcomeEmail({email: emailToUse}),
     });
 
     return NextResponse.json(
