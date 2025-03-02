@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, forwardRef, useRef, useEffect } from "react";
+import { useState, forwardRef } from "react";
 import ScrambleHover from "./scramble-hover";
 import ScrambleIn, { ScrambleInHandle } from "./scramble-in";
-import { useElementPosition } from "@/hooks/use-element-position";
-import Image from "next/image";
 
 interface ScrambleCombinedPairProps {
   leftText: React.ReactNode;

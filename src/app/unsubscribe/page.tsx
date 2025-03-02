@@ -40,6 +40,7 @@ export default function UnsubscribePage() {
       clearInterval(interval);
       setStatus("success");
     } catch (err) {
+      console.error('Error unsubscribing:', err)
       clearInterval(interval);
       setStatus("error");
     }
