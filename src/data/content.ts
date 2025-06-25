@@ -24,8 +24,14 @@ export const projects = [
     img: "./img/fancy.webp"
   },
   {
+    title: "motion along path ＊ codrops",
+    year: "2025",
+    links: "https://tympanus.net/codrops/2025/06/17/building-an-infinite-marquee-along-an-svg-path-with-react-motion/",
+    img: "./img/codrops2025.webp"
+  },
+  {
     title: "unbaited",
-    year: "now",
+    year: "2025",
     links: "https://unbaited.danielpetho.com",
     img: "./img/unbaited.webp"
   },
@@ -48,13 +54,13 @@ export const projects = [
     img: "./img/prev.webp"
   },
   {
-    title: "pool group＊xorxor",
+    title: "pool group ＊ xorxor",
     year: "2023",
     links: "https://medencecsoport.hu/",
     img: "./img/pool.webp"
   },
   {
-    title: "vodafone lobby＊xorxor",
+    title: "vodafone lobby ＊ xorxor",
     year: "2023",
     links: "https://xorxor.hu/projects/vodafone-dataviz.html",
     img: "./img/vodafone.webp"
@@ -66,19 +72,19 @@ export const projects = [
     img: "./img/terrestrial.webp"
   },
   {
-    title: "skanzen transylvania＊xorxor",
+    title: "skanzen transylvania ＊ xorxor",
     year: "2022",
     links: "https://xorxor.hu/projects/Skanzen.html",
     img: "./img/skanzen.webp"
   },
   {
-    title: "gazelle flip — video＊extrawelt ",
+    title: "gazelle flip — video ＊ extrawelt ",
     year: "2021",
     links: "https://www.youtube.com/watch?v=NY1mWQIqTBU",
     img: "./img/gazelle.webp"
   },
   {
-    title: "streiflicht — video＊extrawelt",
+    title: "streiflicht — video ＊ extrawelt",
     year: "2021",
     links: "https://www.youtube.com/watch?v=Cft0Ea__Ezs",
     img: "./img/streiflicht.webp"
