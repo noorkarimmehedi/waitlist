@@ -24,6 +24,12 @@ export const projects = [
     img: "./img/fancy.webp"
   },
   {
+    title: "mediapipe drawing ＊ bolt hackathon",
+    year: "2025",
+    links: "https://devpost.com/software/mediapipe-drawing/",
+    img: "./img/bolt-hackathon2025.webp"
+  },
+  {
     title: "motion along path ＊ codrops",
     year: "2025",
     links: "https://tympanus.net/codrops/2025/06/17/building-an-infinite-marquee-along-an-svg-path-with-react-motion/",
@@ -66,7 +72,7 @@ export const projects = [
     img: "./img/vodafone.webp"
   },
   {
-    title: "terrestrial",
+    title: "terrestrial ＊ generative hut",
     year: "2022",
     links: "https://github.com/danielpetho/terrestrial-fxhash-tutorial",
     img: "./img/terrestrial.webp"
