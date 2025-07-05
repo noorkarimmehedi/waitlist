@@ -107,10 +107,6 @@ export const socials = [
     links: "https://github.com/danielpetho"
   },
   {
-    name: "linkedin",
-    links: "https://linkedin.com/in/kpethodaniel"
-  },
-  {
     name: "instagram",
     links: "https://instagram.com/nonzeroexitcode"
   },
@@ -121,5 +117,9 @@ export const socials = [
   {
     name: "threads",
     links: "https://threads.net/@nonzeroexitcode"
+  },
+  {
+    name: "linkedin",
+    links: "https://linkedin.com/in/kpethodaniel"
   },
 ];
