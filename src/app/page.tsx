@@ -150,17 +150,19 @@ export default function Home() {
                     boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
                   }}
                 >
-                  <div style={{ position: 'relative', width: '100%', paddingBottom: '66.67%' }}>
-                    <Image 
-                      src="/Showcase_02.webp" 
-                      alt="Project showcase" 
-                      width={1200}
-                      height={800}
-                      quality={90}
-                      priority={true}
-                      className="absolute top-0 left-0 w-full h-full object-cover"
-                    />
-                  </div>
+                  <Image 
+                    src="/img/Showcase_02.webp" 
+                    alt="Project showcase" 
+                    width={1200}
+                    height={800}
+                    quality={90}
+                    priority={true}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      objectFit: 'cover',
+                    }}
+                  />
                 </div>
                 
                 {/* Second image with explicit dimensions */}
@@ -170,17 +172,19 @@ export default function Home() {
                     boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
                   }}
                 >
-                  <div style={{ position: 'relative', width: '100%', paddingBottom: '66.67%' }}>
-                    <Image 
-                      src="/imgi_3_a-trips-travel-app.webp" 
-                      alt="Trips travel app" 
-                      width={1200}
-                      height={800}
-                      quality={90}
-                      priority={true}
-                      className="absolute top-0 left-0 w-full h-full object-cover"
-                    />
-                  </div>
+                  <Image 
+                    src="/img/imgi_3_a-trips-travel-app.webp" 
+                    alt="Trips travel app" 
+                    width={1200}
+                    height={800}
+                    quality={90}
+                    priority={true}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      objectFit: 'cover',
+                    }}
+                  />
                 </div>
               </div>
             </div>
