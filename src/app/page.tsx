@@ -23,13 +23,13 @@ export default function Home() {
                 scrambleSpeed={SCRAMBLE_SPEED}
                 className="font-bold text-[#0015ff]"
               >
-                Kaarim
+                Kaarim-Building Softwares with AI
               </ScrambleCombined>
             </h2>
             <ul className="text-center">
               <li>
                 <ScrambleIn
-                  delay={getAnimationDuration("Kaarim")}
+                  delay={getAnimationDuration("Kaarim-Building Softwares with AI")}
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
                   className="pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
@@ -44,7 +44,7 @@ export default function Home() {
                   className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
                 >
                   <ScrambleCombined
-                    delay={getAnimationDuration("Kaarim") + ROW_DELAY}
+                    delay={getAnimationDuration("Kaarim-Building Softwares with AI") + ROW_DELAY}
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}
                     className="whitespace-pre"
@@ -65,7 +65,7 @@ export default function Home() {
                   className="cursor-pointer border-b-2 border-transparent md:hover:border-[#0015ff] pb-0.5 md:pb-0.5 lg:pb-1 inline-block font-medium text-[#0015ff]"
                 >
                   <ScrambleCombined
-                    delay={getAnimationDuration("Kaarim") + ROW_DELAY * 2}
+                    delay={getAnimationDuration("Kaarim-Building Softwares with AI") + ROW_DELAY * 2}
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}
                   >
@@ -112,7 +112,7 @@ export default function Home() {
                     <ScrambleCombined
                       delay={
                         ROW_DELAY * 17 +
-                        getAnimationDuration("Kaarim") +
+                        getAnimationDuration("Kaarim-Building Softwares with AI") +
                         ROW_DELAY * index
                       }
                       scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
