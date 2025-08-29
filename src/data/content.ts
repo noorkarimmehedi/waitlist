@@ -21,43 +21,43 @@ export const projects = [
     title: "fancycomponents.dev",
     year: "now",
     links: "https://fancycomponents.dev",
-    img: "./img/fancy.webp"
+    img: "/img/fancy.webp"
   },
   {
     title: "mediapipe drawing ＊ bolt hackathon",
     year: "2025",
     links: "https://devpost.com/software/mediapipe-drawing/",
-    img: "./img/bolt-hackathon2025.webp"
+    img: "/img/bolt-hackathon2025.webp"
   },
   {
     title: "motion along path ＊ codrops",
     year: "2025",
     links: "https://tympanus.net/codrops/2025/06/17/building-an-infinite-marquee-along-an-svg-path-with-react-motion/",
-    img: "./img/codrops2025.webp"
+    img: "/img/codrops2025.webp"
   },
   {
     title: "unbaited",
     year: "2025",
     links: "https://unbaited.danielpetho.com",
-    img: "./img/unbaited.webp"
+    img: "/img/unbaited.webp"
   },
   {
     title: "lock in 2025",
     year: "2024",
     links: "https://lock-in.danielpetho.com",
-    img: "./img/lock-in.webp"
+    img: "/img/lock-in.webp"
   },
   {
     title: "ar filters",
     year: "2024",
     links: "https://2024.danielpetho.com/lab/filters",
-    img: "./img/ar.webp"
+    img: "/img/ar.webp"
   },
   {
     title: "prev. portfolio",
     year: "2024",
     links: "https://2024.danielpetho.com",
-    img: "./img/prev.webp"
+    img: "/img/prev.webp"
   }
 ];
 
