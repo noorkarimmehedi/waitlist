@@ -152,7 +152,7 @@ export default function Home() {
                 >
                   <div style={{ position: 'relative', width: '100%', paddingBottom: '66.67%' }}>
                     <Image 
-                      src="/Showcase_001.webp" 
+                      src="/Showcase_02.webp" 
                       alt="Project showcase" 
                       width={1200}
                       height={800}
