@@ -1,6 +1,5 @@
 import ScrambleCombined from "@/components/scramble-combined";
 import ScrambleIn from "@/components/scramble-in";
-import ScrambleCombinedPair from "@/components/scramble-combined-pair";
 import { socials } from "@/data/content";
 import {
   getAnimationDuration,
