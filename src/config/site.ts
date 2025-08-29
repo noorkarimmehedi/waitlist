@@ -1,14 +1,14 @@
 export const siteConfig = {
-    name: "daniel petho — design engineer",
-    url: "https://danielpetho.com",
-    ogImage: "https://danielpetho.com/og.jpg",
+    name: "Kaarim — developer & designer",
+    url: "https://kaarim.com",
+    ogImage: "/og.jpg",
     // description:
-    //   "Daniel Petho",
+    //   "Kaarim - developer & designer",
     links: {
-      twitter: "https://twitter.com/nonzeroexitcode",
-      github: "https://github.com/danielpetho",
-      linkedin: "https://www.linkedin.com/in/danielpetho",
-      email: "hello@danielpetho.com",
+      twitter: "https://twitter.com/kaarim",
+      github: "https://github.com/kaarim",
+      linkedin: "https://www.linkedin.com/in/kaarim",
+      email: "hello@kaarim.com",
     },
   };
   

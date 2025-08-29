@@ -58,42 +58,6 @@ export const projects = [
     year: "2024",
     links: "https://2024.danielpetho.com",
     img: "./img/prev.webp"
-  },
-  {
-    title: "pool group ＊ xorxor",
-    year: "2023",
-    links: "https://medencecsoport.hu/",
-    img: "./img/pool.webp"
-  },
-  {
-    title: "vodafone lobby ＊ xorxor",
-    year: "2023",
-    links: "https://xorxor.hu/projects/vodafone-dataviz.html",
-    img: "./img/vodafone.webp"
-  },
-  {
-    title: "terrestrial ＊ generative hut",
-    year: "2022",
-    links: "https://github.com/danielpetho/terrestrial-fxhash-tutorial",
-    img: "./img/terrestrial.webp"
-  },
-  {
-    title: "skanzen transylvania ＊ xorxor",
-    year: "2022",
-    links: "https://xorxor.hu/projects/Skanzen.html",
-    img: "./img/skanzen.webp"
-  },
-  {
-    title: "gazelle flip — video ＊ extrawelt ",
-    year: "2021",
-    links: "https://www.youtube.com/watch?v=NY1mWQIqTBU",
-    img: "./img/gazelle.webp"
-  },
-  {
-    title: "streiflicht — video ＊ extrawelt",
-    year: "2021",
-    links: "https://www.youtube.com/watch?v=Cft0Ea__Ezs",
-    img: "./img/streiflicht.webp"
   }
 ];
 
@@ -101,25 +65,5 @@ export const socials = [
   {
     name: "x/twitter",
     links: "https://twitter.com/nonzeroexitcode"
-  },
-  {
-    name: "github", 
-    links: "https://github.com/danielpetho"
-  },
-  {
-    name: "instagram",
-    links: "https://instagram.com/nonzeroexitcode"
-  },
-  {
-    name: "bluesky",
-    links: "https://bsky.app/profile/danielpetho.com"
-  },
-  {
-    name: "threads",
-    links: "https://threads.net/@nonzeroexitcode"
-  },
-  {
-    name: "linkedin",
-    links: "https://linkedin.com/in/kpethodaniel"
   },
 ];

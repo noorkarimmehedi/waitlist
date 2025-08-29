@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Daniel Petho",
-      url: "https://danielpetho.com",
+      name: "Kaarim",
+      url: "https://kaarim.com",
     },
   ],
-  creator: "danielpetho",
+  creator: "Kaarim",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -43,12 +43,12 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     //description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@nonzeroexitcode",
+    creator: "@kaarim",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/sun-favicon-bg.svg",
+    shortcut: "/sun-favicon.svg",
+    apple: "/sun-favicon-bg.svg",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 };
