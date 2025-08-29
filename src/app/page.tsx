@@ -1,7 +1,7 @@
 import ScrambleCombined from "@/components/scramble-combined";
 import ScrambleIn from "@/components/scramble-in";
 import ScrambleCombinedPair from "@/components/scramble-combined-pair";
-import { projects, socials } from "@/data/content";
+import { socials } from "@/data/content";
 import {
   getAnimationDuration,
   ROW_DELAY,
@@ -12,12 +12,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black pl-4 pr-4 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight overflow-x-hidden w-full">
+    <main className="min-h-screen bg-[#fefefe] text-black pl-4 lr-0 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight">
       <div>
-        <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-16 sm:gap-18 md:gap-20 lg:gap-28">
+        <div className="relative max-w-screen-2xl mx-auto flex flex-col items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           {/* Header */}
-          <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+          <div className="flex flex-col items-center text-center">
+            <h2 className="mb-6">
               <ScrambleCombined
                 delay={0}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -27,7 +27,7 @@ export default function Home() {
                 Kaarim
               </ScrambleCombined>
             </h2>
-            <ul className="flex-1">
+            <ul className="text-center">
               <li>
                 <ScrambleIn
                   delay={getAnimationDuration("Kaarim")}
@@ -48,9 +48,9 @@ export default function Home() {
                     delay={getAnimationDuration("Kaarim") + ROW_DELAY}
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}
-                    className="break-words"
+                    className="whitespace-pre"
                   >
-                    <span className="break-words">
+                    <span className="whitespace-pre">
                       developer & designer{" "}
                       <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
                         ↗
@@ -80,69 +80,19 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Projects */}
-          <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
-              <ScrambleIn
-                delay={ROW_DELAY * 7}
-                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                scrambleSpeed={SCRAMBLE_SPEED}
-                className="font-bold text-[#0015ff]"
-              >
-                Projects
-              </ScrambleIn>
-            </h2>
-            <ul className="flex-1">
-              {projects.map((project, index) => (
-                <li key={index}>
-                  <a
-                    href={project.links}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ScrambleCombinedPair
-                      key={index}
-                      leftTextString={project.title}
-                      leftText={
-                        <span className="w-full break-words">
-                          {project.title}{" "}
-                          <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
-                            ↗
-                          </span>
-                        </span>
-                      }
-                      rightText={project.year}
-                      delay={
-                        ROW_DELAY * 7 +
-                        getAnimationDuration("Kaarim") +
-                        ROW_DELAY * index
-                      }
-                      img={project.img}
-                      imgAlt={`${project.title} project thumbnail`}
-                      showImage={true}
-                      scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                      scrambleSpeed={SCRAMBLE_SPEED}
-                      containerClassName="group justify-between border-b-2 md:hover:border-foreground border-b-transparent cursor-pointer pb-0.5 md:pb-0.5 lg:pb-1"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact */}
-          <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
-              <ScrambleIn
+          <div className="flex flex-col items-center text-center">
+            <h2 className="mb-6">
+              <ScrambleCombined
                 delay={ROW_DELAY * 15}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                 scrambleSpeed={SCRAMBLE_SPEED}
                 className="font-bold text-[#0015ff]"
               >
                 Contact
-              </ScrambleIn>
+              </ScrambleCombined>
             </h2>
-            <ul>
+            <ul className="text-center">
               <li>
                 <Image 
                   src="/imgi_2_imgi_11_image.webp" 
@@ -178,6 +128,30 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Showcase */}
+          <div className="flex flex-col items-center text-center w-full">
+            <h2 className="mb-6">
+              <ScrambleCombined
+                delay={ROW_DELAY * 20}
+                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                scrambleSpeed={SCRAMBLE_SPEED}
+                className="font-bold text-[#0015ff]"
+              >
+                Showcase
+              </ScrambleCombined>
+            </h2>
+            <div className="w-full max-w-4xl mx-auto">
+              <Image 
+                src="/Showcase_01.webp" 
+                alt="Project showcase" 
+                width={1200}
+                height={800}
+                className="w-full h-auto rounded-lg shadow-lg"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

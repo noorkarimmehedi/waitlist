@@ -53,7 +53,7 @@ const ScrambleCombinedPair = forwardRef<
         onMouseLeave={() => setIsHovering(false)}
       >
         {bothComplete ? (
-          <div className="flex justify-between w-full relative flex-1 break-words">
+          <div className="flex justify-between w-full relative flex-1 whitespace-pre">
             <ScrambleHover
               scrambleSpeed={scrambleSpeed * 1.3}
               characters={characters}
