@@ -12,12 +12,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black pl-4 lr-0 pt-10 pb-10 sm:px-4 sm:pt-10 sm:pb-10 md:pt-10 md:pb-10 lg:pt-12 lg:pb-12 md:p-10 lg:p-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight">
+    <main className="min-h-screen bg-[#fefefe] text-black pl-4 lr-0 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight">
       <div>
         <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-16 sm:gap-18 md:gap-20 lg:gap-28">
           {/* Header */}
-          <div className="flex flex-col items-start text-left sm:items-center sm:text-center">
-            <h2 className="mb-6">
+          <div className="flex flex-col sm:flex-row">
+            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <ScrambleCombined
                 delay={0}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
@@ -27,62 +27,67 @@ export default function Home() {
                 Kaarim
               </ScrambleCombined>
             </h2>
-            <div className="flex flex-col items-start sm:items-center">
-              <div className="pb-2">
+            <ul className="flex-1">
+              <li>
                 <ScrambleIn
                   delay={getAnimationDuration("Kaarim")}
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
+                  className="pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
                 >
                   design ✺&#xfe0e; tech ∿&#xfe0e; build ◳&#xfe0e;
                 </ScrambleIn>
-              </div>
-              <a
-                href="#"
-                target="_blank"
-                className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground pb-0.5 md:pb-0.5 lg:pb-1 inline-block mt-1"
-              >
-                <ScrambleCombined
-                  delay={getAnimationDuration("Kaarim") + ROW_DELAY}
-                  scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                  scrambleSpeed={SCRAMBLE_SPEED}
-                  className="whitespace-pre"
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
                 >
-                  <span className="whitespace-pre">
-                    developer & designer{" "}
+                  <ScrambleCombined
+                    delay={getAnimationDuration("Kaarim") + ROW_DELAY}
+                    scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                    scrambleSpeed={SCRAMBLE_SPEED}
+                    className="whitespace-pre"
+                  >
+                    <span className="whitespace-pre">
+                      developer & designer{" "}
+                      <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
+                        ↗
+                      </span>
+                    </span>
+                  </ScrambleCombined>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tally.so/r/wz94LE"
+                  target="_blank"
+                  className="cursor-pointer border-b-2 border-transparent md:hover:border-[#0015ff] pb-0.5 md:pb-0.5 lg:pb-1 inline-block font-medium text-[#0015ff]"
+                >
+                  <ScrambleCombined
+                    delay={getAnimationDuration("Kaarim") + ROW_DELAY * 2}
+                    scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                    scrambleSpeed={SCRAMBLE_SPEED}
+                  >
+                    Book a slot{" "}
                     <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
                       ↗
                     </span>
-                  </span>
-                </ScrambleCombined>
-              </a>
-              <a
-                href="https://tally.so/r/wz94LE"
-                target="_blank"
-                className="cursor-pointer border-b-2 border-transparent md:hover:border-[#0015ff] pb-0.5 md:pb-0.5 lg:pb-1 inline-block mt-4 font-medium text-[#0015ff]"
-              >
-                <ScrambleCombined
-                  delay={getAnimationDuration("Kaarim") + ROW_DELAY * 2}
-                  scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                  scrambleSpeed={SCRAMBLE_SPEED}
-                >
-                  Book a slot{" "}
-                  <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
-                    ↗
-                  </span>
-                </ScrambleCombined>
-              </a>
-            </div>
+                  </ScrambleCombined>
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Projects */}
           <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <ScrambleIn
                 delay={ROW_DELAY * 7}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                 scrambleSpeed={SCRAMBLE_SPEED}
-                className="font-bold"
+                className="font-bold text-[#0015ff]"
               >
                 Projects
               </ScrambleIn>
@@ -127,12 +132,12 @@ export default function Home() {
 
           {/* Contact */}
           <div className="flex flex-col sm:flex-row">
-            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12  sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
+            <h2 className="w-full mb-[2vw] sm:mb-0 sm:text-right pr-4 sm:pr-6 md:pr-8 lg:pr-12 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-[22%]">
               <ScrambleIn
                 delay={ROW_DELAY * 15}
                 scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                 scrambleSpeed={SCRAMBLE_SPEED}
-                className="font-bold"
+                className="font-bold text-[#0015ff]"
               >
                 Contact
               </ScrambleIn>
