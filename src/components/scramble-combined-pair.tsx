@@ -3,6 +3,7 @@
 import { useState, forwardRef } from "react";
 import ScrambleHover from "./scramble-hover";
 import ScrambleIn, { ScrambleInHandle } from "./scramble-in";
+import Image from "next/image";
 
 interface ScrambleCombinedPairProps {
   leftText: React.ReactNode;
@@ -66,10 +67,12 @@ const ScrambleCombinedPair = forwardRef<
 
             {isHovering && showImage && (
               <div className="hidden md:flex sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-36 xl:h-36 sm:right-0 md:right-[12%] bottom-0 absolute">
-                <img
+                <Image
                   src={img!}
                   alt={imgAlt!}
-                  className="absolute right-0 top-0 h-full w-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 80px, (max-width: 1024px) 96px, (max-width: 1280px) 112px, 144px"
+                  className="object-cover"
                 />
               </div>
             )}

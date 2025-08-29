@@ -8,6 +8,7 @@ import {
   SCRAMBLE_SPEED,
   SCRAMBLED_LETTER_COUNT,
 } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -138,10 +139,12 @@ export default function Home() {
             </h2>
             <ul>
               <li>
-                <img 
+                <Image 
                   src="/imgi_2_imgi_11_image.webp" 
                   alt="Kaarim signature" 
-                  className="h-auto max-w-[60px] mb-1"
+                  width={60}
+                  height={30}
+                  className="h-auto w-auto max-w-[60px] mb-1"
                 />
               </li>
               {socials.map((social, index) => (
