@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black pl-4 lr-0 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight">
+    <main className="min-h-screen bg-[#fefefe] text-black pl-4 pr-4 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight overflow-x-hidden w-full">
       <div>
         <div className="relative max-w-screen-2xl mx-auto flex flex-col gap-16 sm:gap-18 md:gap-20 lg:gap-28">
           {/* Header */}
@@ -48,9 +48,9 @@ export default function Home() {
                     delay={getAnimationDuration("Kaarim") + ROW_DELAY}
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}
-                    className="whitespace-pre"
+                    className="break-words"
                   >
-                    <span className="whitespace-pre">
+                    <span className="break-words">
                       developer & designer{" "}
                       <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
                         ↗
@@ -104,7 +104,7 @@ export default function Home() {
                       key={index}
                       leftTextString={project.title}
                       leftText={
-                        <span className="w-full whitespace-pre">
+                        <span className="w-full break-words">
                           {project.title}{" "}
                           <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
                             ↗
