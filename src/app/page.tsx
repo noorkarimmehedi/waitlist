@@ -142,15 +142,46 @@ export default function Home() {
               </ScrambleCombined>
             </h2>
             <div className="flex justify-center items-center w-full">
-              <div className="w-full max-w-3xl mx-auto px-0 sm:px-4 flex justify-center">
-                <Image 
-                  src="/Showcase_01.webp" 
-                  alt="Project showcase" 
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto rounded-lg shadow-lg mx-auto"
-                  priority
-                />
+              <div className="w-full max-w-3xl mx-auto px-0 sm:px-4 flex flex-col gap-8">
+                {/* First image with explicit dimensions */}
+                <div 
+                  className="w-full overflow-hidden rounded-lg bg-gray-50" 
+                  style={{ 
+                    boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
+                  }}
+                >
+                  <div style={{ position: 'relative', width: '100%', paddingBottom: '66.67%' }}>
+                    <Image 
+                      src="/Showcase_001.webp" 
+                      alt="Project showcase" 
+                      width={1200}
+                      height={800}
+                      quality={90}
+                      priority={true}
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                {/* Second image with explicit dimensions */}
+                <div 
+                  className="w-full overflow-hidden rounded-lg bg-gray-50" 
+                  style={{ 
+                    boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
+                  }}
+                >
+                  <div style={{ position: 'relative', width: '100%', paddingBottom: '66.67%' }}>
+                    <Image 
+                      src="/imgi_3_a-trips-travel-app.webp" 
+                      alt="Trips travel app" 
+                      width={1200}
+                      height={800}
+                      quality={90}
+                      priority={true}
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
