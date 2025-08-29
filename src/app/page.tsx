@@ -11,9 +11,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black pl-4 lr-0 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight">
+    <main className="min-h-screen bg-[#fefefe] text-black px-0 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight">
       <div>
-        <div className="relative max-w-screen-2xl mx-auto flex flex-col items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16">
+        <div className="relative max-w-screen-2xl mx-auto flex flex-col items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 px-0 w-full">
           {/* Header */}
           <div className="flex flex-col items-center text-center">
             <h2 className="mb-6">
@@ -130,7 +130,7 @@ export default function Home() {
           </div>
 
           {/* Showcase */}
-          <div className="flex flex-col items-center text-center w-full">
+          <div className="flex flex-col items-center text-center w-full px-0">
             <h2 className="mb-6">
               <ScrambleCombined
                 delay={ROW_DELAY * 20}
@@ -138,18 +138,20 @@ export default function Home() {
                 scrambleSpeed={SCRAMBLE_SPEED}
                 className="font-bold text-[#0015ff]"
               >
-                Showcase
+                My own Museum
               </ScrambleCombined>
             </h2>
-            <div className="w-full max-w-4xl mx-auto">
-              <Image 
-                src="/Showcase_01.webp" 
-                alt="Project showcase" 
-                width={1200}
-                height={800}
-                className="w-full h-auto rounded-lg shadow-lg"
-                priority
-              />
+            <div className="flex justify-center items-center w-full">
+              <div className="w-full max-w-3xl mx-auto px-0 sm:px-4 flex justify-center">
+                <Image 
+                  src="/Showcase_01.webp" 
+                  alt="Project showcase" 
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto rounded-lg shadow-lg mx-auto"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
