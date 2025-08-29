@@ -186,6 +186,28 @@ export default function Home() {
                     }}
                   />
                 </div>
+                
+                {/* Third image with explicit dimensions */}
+                <div 
+                  className="w-full overflow-hidden rounded-lg bg-gray-50" 
+                  style={{ 
+                    boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
+                  }}
+                >
+                  <Image 
+                    src="/showcase_03.webp" 
+                    alt="Project showcase" 
+                    width={1200}
+                    height={800}
+                    quality={90}
+                    priority={true}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
