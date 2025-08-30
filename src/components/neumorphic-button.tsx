@@ -122,6 +122,11 @@ export default function NeumorphicButton({ href, children, className = '' }: Neu
           user-select: none;
         }
 
+        .button-inner .arrow-icon {
+          width: 16px;
+          height: 16px;
+        }
+
         .neumorphic-button:hover .button-inner span {
           transform: scale(0.975);
         }
@@ -141,9 +146,9 @@ export default function NeumorphicButton({ href, children, className = '' }: Neu
             white-space: nowrap;
           }
           
-          .button-inner svg {
-            width: 14px;
-            height: 14px;
+          .button-inner .arrow-icon {
+            width: 12px;
+            height: 12px;
           }
         }
       `}</style>

@@ -26,3 +26,16 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
+/* Arrow icon responsive sizing */
+.arrow-icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .arrow-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
