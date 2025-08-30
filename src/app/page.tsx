@@ -1,5 +1,6 @@
 import ScrambleCombined from "@/components/scramble-combined";
 import ScrambleIn from "@/components/scramble-in";
+import NeumorphicButton from "@/components/neumorphic-button";
 import { socials } from "@/data/content";
 import {
   getAnimationDuration,
@@ -23,13 +24,13 @@ export default function Home() {
                 scrambleSpeed={SCRAMBLE_SPEED}
                 className="font-bold text-[#0015ff]"
               >
-                Kaarim-Building Softwares with AI
+                Kaarim
               </ScrambleCombined>
             </h2>
             <ul className="text-center">
               <li>
                 <ScrambleIn
-                  delay={getAnimationDuration("Kaarim-Building Softwares with AI")}
+                  delay={getAnimationDuration("Kaarim")}
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
                   className="pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
@@ -44,7 +45,7 @@ export default function Home() {
                   className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
                 >
                   <ScrambleCombined
-                    delay={getAnimationDuration("Kaarim-Building Softwares with AI") + ROW_DELAY}
+                    delay={getAnimationDuration("Kaarim") + ROW_DELAY}
                     scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                     scrambleSpeed={SCRAMBLE_SPEED}
                     className="whitespace-pre"
@@ -59,22 +60,9 @@ export default function Home() {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://tally.so/r/wz94LE"
-                  target="_blank"
-                  className="cursor-pointer border-b-2 border-transparent md:hover:border-[#0015ff] pb-0.5 md:pb-0.5 lg:pb-1 inline-block font-medium text-[#0015ff]"
-                >
-                  <ScrambleCombined
-                    delay={getAnimationDuration("Kaarim-Building Softwares with AI") + ROW_DELAY * 2}
-                    scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                    scrambleSpeed={SCRAMBLE_SPEED}
-                  >
-                    Book a slot{" "}
-                    <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
-                      ↗
-                    </span>
-                  </ScrambleCombined>
-                </a>
+                <NeumorphicButton href="https://tally.so/r/wz94LE">
+                  Book Your slot ↗
+                </NeumorphicButton>
               </li>
             </ul>
           </div>
@@ -112,7 +100,7 @@ export default function Home() {
                     <ScrambleCombined
                       delay={
                         ROW_DELAY * 17 +
-                        getAnimationDuration("Kaarim-Building Softwares with AI") +
+                        getAnimationDuration("Kaarim") +
                         ROW_DELAY * index
                       }
                       scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
