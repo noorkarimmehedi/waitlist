@@ -81,7 +81,7 @@ export default function NeumorphicButton({ href, children, className = '' }: Neu
           transition: box-shadow 300ms ease, clip-path 250ms ease,
               background-image 250ms ease, transform 250ms ease;
           will-change: box-shadow, clip-path, background-image, transform;
-          overflow: clip;
+          overflow: visible;
           clip-path: inset(0 0 0 0 round 999vw);
           box-shadow:
               0 0 0 0 inset rgba(5, 5, 5, 0.1),
@@ -111,12 +111,7 @@ export default function NeumorphicButton({ href, children, className = '' }: Neu
           font-family: "Inter", sans-serif;
           letter-spacing: -0.05em;
           font-weight: 500;
-          color: rgba(0, 0, 0, 0);
-          background-image: linear-gradient(135deg,
-                  rgba(25, 25, 25, 1),
-                  rgba(75, 75, 75, 1));
-          -webkit-background-clip: text;
-          background-clip: text;
+          color: #333;
           transition: transform 250ms ease;
           display: block;
           will-change: transform;
@@ -133,6 +128,18 @@ export default function NeumorphicButton({ href, children, className = '' }: Neu
 
         .neumorphic-button:active .button-inner {
           transform: scale(0.975);
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+          .button-inner {
+            padding: 0.8em 1.2em;
+          }
+          
+          .button-inner span {
+            font-size: 0.9em;
+            white-space: nowrap;
+          }
         }
       `}</style>
     </a>
