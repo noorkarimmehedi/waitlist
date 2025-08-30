@@ -140,6 +140,11 @@ export default function NeumorphicButton({ href, children, className = '' }: Neu
             font-size: 0.9em;
             white-space: nowrap;
           }
+          
+          .button-inner svg {
+            width: 14px;
+            height: 14px;
+          }
         }
       `}</style>
     </a>
