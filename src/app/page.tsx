@@ -15,7 +15,7 @@ export default function Home() {
                   scrambleSpeed={30}
                   maxIterations={15}
                   useOriginalCharsOnly={true}
-                  className="font-bold text-[#0015ff] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words"
+                  className="font-bold text-[#0015ff] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words inline-block"
                 >
                   Dear You,
                 </ScrambleHover>
@@ -26,12 +26,11 @@ export default function Home() {
                   scrambleSpeed={30}
                   maxIterations={15}
                   useOriginalCharsOnly={true}
-                  className="inline-block text-lg sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words"
+                  className="text-lg sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words inline-block"
                 >
                   A new adventure is about to begin ✺&#xfe0e;
                 </ScrambleHover>
               </div>
-              
             </div>
           </div>
 
@@ -43,15 +42,29 @@ export default function Home() {
                 Be the first to know when we launch. Join our waitlist and get early access to something extraordinary.
               </p>
               <div className="mt-4">
-                <span className="block font-normal text-base sm:text-lg">Kindest regards,</span>
-                <Image
+                <ScrambleHover
+                  scrambleSpeed={30}
+                  maxIterations={15}
+                  useOriginalCharsOnly={true}
+                  className="block font-normal text-base sm:text-lg"
+                >
+                  Kindest regards,
+                </ScrambleHover>
+                <Image 
                   src="/imgi_2_imgi_11_image.webp"
                   alt="Onlooop Team signature"
                   width={48}
                   height={48}
                   className="w-12 h-auto mt-2 mb-1"
                 />
-                <span className="block font-normal text-sm sm:text-base mt-1">Onlooop Team</span>
+                <ScrambleHover
+                  scrambleSpeed={30}
+                  maxIterations={15}
+                  useOriginalCharsOnly={true}
+                  className="block font-normal text-sm sm:text-base mt-1"
+                >
+                  Onlooop Team
+                </ScrambleHover>
                 <hr className="mt-2 border-t border-gray-300 w-24" />
               </div>
             </div>
