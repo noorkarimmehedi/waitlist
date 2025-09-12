@@ -1,7 +1,10 @@
 "use client";
 
+"use client";
+
 import { useState } from 'react';
 import AnimatedButton from './animated-button';
+import { addToWaitlist } from '@/lib/supabase/waitlist';
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState('');
@@ -12,11 +15,15 @@ export default function WaitlistForm() {
     setStatus('loading');
 
     try {
-      // TODO: Implement your waitlist submission logic here
-      // For now, we'll just simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setStatus('success');
-      setEmail('');
+      const { success, error } = await addToWaitlist(email);
+      
+      if (success) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        console.error('Failed to submit:', error);
+        setStatus('error');
+      }
     } catch (err: unknown) {
       console.error('Failed to submit:', err);
       setStatus('error');
@@ -30,7 +37,7 @@ export default function WaitlistForm() {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="hey@0.email"
+          placeholder="Enter your email"
           required
           className="flex-1 px-4 py-2 text-base rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
