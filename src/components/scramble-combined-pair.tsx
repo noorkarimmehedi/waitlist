@@ -6,9 +6,9 @@ import ScrambleIn, { ScrambleInHandle } from "./scramble-in";
 import Image from "next/image";
 
 interface ScrambleCombinedPairProps {
-  leftText: React.ReactNode;
+  leftText: string;
   leftTextString: string;
-  rightText: React.ReactNode;
+  rightText: string;
   img?: string;
   imgAlt?: string;
   delay?: number;

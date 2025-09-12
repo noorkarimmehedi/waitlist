@@ -10,6 +10,8 @@ interface ScrambleHoverProps {
   useOriginalCharsOnly?: boolean;
   characters?: string;
   className?: string;
+  useInternalHover?: boolean;
+  isHovering?: boolean;
 }
 
 const ScrambleHover: React.FC<ScrambleHoverProps> = ({
@@ -19,9 +21,13 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   useOriginalCharsOnly = true,
   characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
   className = "",
+  useInternalHover = true,
+  isHovering: externalIsHovering,
 }) => {
   const [displayText, setDisplayText] = useState(children);
-  const [isHovering, setIsHovering] = useState(false);
+  const [internalIsHovering, setInternalIsHovering] = useState(false);
+  
+  const isHovering = useInternalHover ? internalIsHovering : externalIsHovering;
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
@@ -68,8 +74,8 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   return (
     <motion.span
       className={className}
-      onHoverStart={() => setIsHovering(true)}
-      onHoverEnd={() => setIsHovering(false)}
+      onHoverStart={() => useInternalHover && setInternalIsHovering(true)}
+      onHoverEnd={() => useInternalHover && setInternalIsHovering(false)}
     >
       {displayText}
     </motion.span>
