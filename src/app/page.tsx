@@ -16,12 +16,12 @@ export default function Home() {
           {/* Main Title */}
           <div className="flex flex-col items-center text-center w-full">
             <div className="w-full max-w-full md:max-w-md">
-              <h1 className="mb-6 text-left">
+              <h1 className="mb-3 sm:mb-6 text-left">
                 <ScrambleCombined
                   delay={0}
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
-                  className="font-bold text-[#0015ff] text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words"
+                  className="font-bold text-[#0015ff] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words"
                 >
                   Dear You,
                 </ScrambleCombined>
