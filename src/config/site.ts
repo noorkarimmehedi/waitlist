@@ -1,9 +1,8 @@
 export const siteConfig = {
-    name: "Kaarim — developer & designer",
+    name: "A New Adventure",
     url: "https://kaarim.com",
     ogImage: "/og.jpg",
-    // description:
-    //   "Kaarim - developer & designer",
+    description: "Be the first to know when we launch. Join our waitlist and get early access to something extraordinary.",
     links: {
       twitter: "https://twitter.com/kaarim",
       github: "https://github.com/kaarim",

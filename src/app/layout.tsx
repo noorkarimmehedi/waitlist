@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     creator: "@kaarim",
   },
   icons: {
-    icon: "/sun-favicon-bg.svg",
-    shortcut: "/sun-favicon.svg",
-    apple: "/sun-favicon-bg.svg",
+    icon: "/a-new-adventure-favicon.svg",
+    shortcut: "/a-new-adventure-favicon.svg",
+    apple: "/a-new-adventure-favicon.svg",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 };

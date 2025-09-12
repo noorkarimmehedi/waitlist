@@ -1,206 +1,72 @@
 import ScrambleCombined from "@/components/scramble-combined";
 import ScrambleIn from "@/components/scramble-in";
-import NeumorphicButton from "@/components/neumorphic-button";
-import { socials } from "@/data/content";
+import WaitlistForm from "@/components/waitlist-form";
 import {
   getAnimationDuration,
   ROW_DELAY,
   SCRAMBLE_SPEED,
   SCRAMBLED_LETTER_COUNT,
 } from "@/lib/utils";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fefefe] text-black px-0 pt-16 pb-6 sm:px-4 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 md:px-10 lg:px-12 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight">
-      <div>
-        <div className="relative max-w-screen-2xl mx-auto flex flex-col items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 px-0 w-full">
-          {/* Header */}
-          <div className="flex flex-col items-center text-center">
-            <h2 className="mb-6">
-              <ScrambleCombined
-                delay={0}
-                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                scrambleSpeed={SCRAMBLE_SPEED}
-                className="font-bold text-[#0015ff]"
-              >
-                Kaarim
-              </ScrambleCombined>
-            </h2>
-            <ul className="text-center">
-              <li>
-                <ScrambleIn
-                  delay={getAnimationDuration("Kaarim")}
+    <main className="min-h-screen bg-[#fefefe] text-black px-4 pt-16 pb-6 sm:px-6 sm:pt-20 sm:pb-6 md:pt-24 md:pb-6 lg:pt-28 lg:pb-6 font-normal text-[3.9vw] sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight sm:leading-tight text-center">
+      <div className="flex items-center justify-center min-h-[calc(100vh-8rem)]">
+        <div className="relative max-w-2xl mx-auto flex flex-col items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full">
+          {/* Main Title */}
+          <div className="flex flex-col items-center text-center w-full">
+            <div className="w-full max-w-full md:max-w-md">
+              <h1 className="mb-6 text-left">
+                <ScrambleCombined
+                  delay={0}
                   scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
                   scrambleSpeed={SCRAMBLE_SPEED}
-                  className="pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
+                  className="font-bold text-[#0015ff] text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words"
                 >
-                  design ✺&#xfe0e; tech ∿&#xfe0e; build ◳&#xfe0e;
+                  Dear You,
+                </ScrambleCombined>
+              </h1>
+              
+              <div className="mb-0 text-left">
+                <ScrambleIn
+                  delay={getAnimationDuration("Coming Soon")}
+                  scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+                  scrambleSpeed={SCRAMBLE_SPEED}
+                  className="inline-block text-lg sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words"
+                >
+                  A new adventure is about to begin ✺&#xfe0e;
                 </ScrambleIn>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  target="_blank"
-                  className="cursor-pointer border-b-2 border-transparent md:hover:border-foreground pb-0.5 md:pb-0.5 lg:pb-1 inline-block"
-                >
-                  <ScrambleCombined
-                    delay={getAnimationDuration("Kaarim") + ROW_DELAY}
-                    scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                    scrambleSpeed={SCRAMBLE_SPEED}
-                    className="whitespace-pre"
-                  >
-                    <span className="whitespace-pre">
-                      developer & designer{" "}
-                      <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
-                        ↗
-                      </span>
-                    </span>
-                  </ScrambleCombined>
-                </a>
-              </li>
-              <li>
-                                  <NeumorphicButton href="https://tally.so/r/wz94LE">
-                    Book a slot{" "}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '4px' }} className="arrow-icon w-[18px] h-[18px] md:w-[22px] md:h-[22px]">
-                      <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17.25 12.33C17.25 12.74 16.91 13.08 16.5 13.08C16.09 13.08 15.75 12.74 15.75 12.33V9.31L8.03 17.03C7.88 17.18 7.69 17.25 7.5 17.25C7.31 17.25 7.12 17.18 6.97 17.03C6.68 16.74 6.68 16.26 6.97 15.97L14.69 8.25H11.67C11.26 8.25 10.92 7.91 10.92 7.5C10.92 7.09 11.26 6.75 11.67 6.75H16.5C16.91 6.75 17.25 7.09 17.25 7.5V12.33Z" fill="currentColor"/>
-                    </svg>
-                  </NeumorphicButton>
-              </li>
-            </ul>
+              </div>
+              
+            </div>
           </div>
 
-          {/* Contact */}
-          <div className="flex flex-col items-center text-center">
-            <h2 className="mb-6">
-              <ScrambleCombined
-                delay={ROW_DELAY * 15}
-                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                scrambleSpeed={SCRAMBLE_SPEED}
-                className="font-bold text-[#0015ff]"
-              >
-                Contact
-              </ScrambleCombined>
-            </h2>
-            <ul className="text-center">
-              <li>
-                <Image 
-                  src="/imgi_2_imgi_11_image.webp" 
-                  alt="Kaarim signature" 
-                  width={60}
-                  height={30}
-                  className="h-auto w-auto max-w-[60px] mb-1"
-                />
-              </li>
-              {socials.map((social, index) => (
-                <li key={index}>
-                  <a
-                    href={social.links}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cursor-pointer border-b-2 border-b-transparent md:hover:border-[#0015ff] pb-0.5 md:pb-0.5 lg:pb-1 inline-block text-[#0015ff]"
-                  >
-                    <ScrambleCombined
-                      delay={
-                        ROW_DELAY * 17 +
-                        getAnimationDuration("Kaarim") +
-                        ROW_DELAY * index
-                      }
-                      scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                      scrambleSpeed={SCRAMBLE_SPEED}
-                    >
-                      {social.name}{" "}
-                      <span className="md:hidden text-[2.5vw] sm:text-xs pb-1 -ml-0.5 font-medium">
-                        ↗
-                      </span>
-                    </ScrambleCombined>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Showcase */}
-          <div className="flex flex-col items-center text-center w-full px-0">
-            <h2 className="mb-6">
-              <ScrambleCombined
-                delay={ROW_DELAY * 20}
-                scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                scrambleSpeed={SCRAMBLE_SPEED}
-                className="font-bold text-[#0015ff]"
-              >
-                My own Museum
-              </ScrambleCombined>
-            </h2>
-            <div className="flex justify-center items-center w-full">
-              <div className="w-full max-w-3xl mx-auto px-0 sm:px-4 flex flex-col gap-8">
-                {/* First image with explicit dimensions */}
-                <div 
-                  className="w-full overflow-hidden rounded-lg bg-gray-50" 
-                  style={{ 
-                    boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
-                  }}
-                >
-                  <Image 
-                    src="/img/Showcase_02.webp" 
-                    alt="Project showcase" 
-                    width={1200}
-                    height={800}
-                    quality={90}
-                    priority={true}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </div>
-                
-                {/* Second image with explicit dimensions */}
-                <div 
-                  className="w-full overflow-hidden rounded-lg bg-gray-50" 
-                  style={{ 
-                    boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
-                  }}
-                >
-                  <Image 
-                    src="/img/imgi_3_a-trips-travel-app.webp" 
-                    alt="Trips travel app" 
-                    width={1200}
-                    height={800}
-                    quality={90}
-                    priority={true}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </div>
-                
-                {/* Third image with explicit dimensions */}
-                <div 
-                  className="w-full overflow-hidden rounded-lg bg-gray-50" 
-                  style={{ 
-                    boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05)",
-                  }}
-                >
-                  <Image 
-                    src="/showcase_03.webp" 
-                    alt="Project showcase" 
-                    width={1200}
-                    height={800}
-                    quality={90}
-                    priority={true}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </div>
+          {/* Email Form */}
+          <div className="w-full max-w-md -mt-2 md:-mt-6">
+            <WaitlistForm />
+            <div className="mt-4 text-left">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black">
+                Be the first to know when we launch. Join our waitlist and get early access to something extraordinary.
+              </p>
+              <div className="mt-4">
+                <span className="block font-normal text-base sm:text-lg">Kindest regards,</span>
+                <img src="/imgi_2_imgi_11_image.webp" alt="Onlooop Team signature" className="w-12 h-auto mt-2 mb-1" />
+                <span className="block font-normal text-sm sm:text-base mt-1">Onlooop Team</span>
+                <hr className="mt-2 border-t border-gray-300 w-24" />
               </div>
             </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-2">
+            <ScrambleCombined
+              delay={getAnimationDuration("Coming Soon") + ROW_DELAY * 3}
+              scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
+              scrambleSpeed={SCRAMBLE_SPEED}
+              className="text-xs sm:text-sm md:text-base opacity-50"
+            >
+              No spam. Unsubscribe anytime.
+            </ScrambleCombined>
           </div>
         </div>
       </div>
