@@ -198,6 +198,7 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
     characters,
     scrambleSpeed,
     useOriginalCharsOnly,
+    revealedIndices,
     sequential,
     revealDirection,
     maxIterations,

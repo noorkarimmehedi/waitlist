@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrambleCombined from "@/components/scramble-combined";
 import ScrambleIn from "@/components/scramble-in";
 import WaitlistForm from "@/components/waitlist-form";
@@ -50,7 +51,13 @@ export default function Home() {
               </p>
               <div className="mt-4">
                 <span className="block font-normal text-base sm:text-lg">Kindest regards,</span>
-                <img src="/imgi_2_imgi_11_image.webp" alt="Onlooop Team signature" className="w-12 h-auto mt-2 mb-1" />
+                <Image
+                  src="/imgi_2_imgi_11_image.webp"
+                  alt="Onlooop Team signature"
+                  width={48}
+                  height={48}
+                  className="w-12 h-auto mt-2 mb-1"
+                />
                 <span className="block font-normal text-sm sm:text-base mt-1">Onlooop Team</span>
                 <hr className="mt-2 border-t border-gray-300 w-24" />
               </div>

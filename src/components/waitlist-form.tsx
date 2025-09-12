@@ -17,7 +17,7 @@ export default function WaitlistForm() {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setStatus('success');
       setEmail('');
-    } catch (error) {
+    } catch (_) {
       setStatus('error');
     }
   };
