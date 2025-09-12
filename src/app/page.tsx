@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import WaitlistForm from "@/components/waitlist-form";
 import ScrambleHover from "@/components/scramble-hover";
