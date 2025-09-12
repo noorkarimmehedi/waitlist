@@ -12,7 +12,7 @@ import {
   } from "react";
   
   interface ScrambleInProps {
-    children: React.ReactNode;
+    children: string;
     scrambleSpeed?: number;
     scrambledLetterCount?: number;
     characters?: string;

@@ -5,7 +5,7 @@ import ScrambleHover from "./scramble-hover";
 import ScrambleIn, { ScrambleInHandle } from "./scramble-in";
 
 interface ScrambleCombinedProps {
-  children: React.ReactNode;
+  children: string;
   delay?: number;
   scrambleSpeed?: number;
   scrambledLetterCount?: number;
