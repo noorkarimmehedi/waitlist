@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-satoshi antialiased h-screen w-screen`}
+        className={`antialiased h-screen w-screen`}
       >
         {children}
         <Analytics />
