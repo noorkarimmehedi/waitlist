@@ -12,22 +12,24 @@ export default function Home() {
             <div className="w-full max-w-full md:max-w-md">
               <h1 className="mb-3 sm:mb-6 text-left">
                 <ScrambleHover
-                  text="Dear You,"
                   scrambleSpeed={30}
                   maxIterations={15}
                   useOriginalCharsOnly={true}
                   className="font-bold text-[#0015ff] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words"
-                />
+                >
+                  Dear You,
+                </ScrambleHover>
               </h1>
               
               <div className="mb-0 text-left">
                 <ScrambleHover
-                  text="A new adventure is about to begin ✺&#xfe0e;"
                   scrambleSpeed={30}
                   maxIterations={15}
                   useOriginalCharsOnly={true}
                   className="inline-block text-lg sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words"
-                />
+                >
+                  A new adventure is about to begin ✺&#xfe0e;
+                </ScrambleHover>
               </div>
               
             </div>
