@@ -1,13 +1,6 @@
 import Image from "next/image";
-import ScrambleCombined from "@/components/scramble-combined";
-import ScrambleIn from "@/components/scramble-in";
 import WaitlistForm from "@/components/waitlist-form";
-import {
-  getAnimationDuration,
-  ROW_DELAY,
-  SCRAMBLE_SPEED,
-  SCRAMBLED_LETTER_COUNT,
-} from "@/lib/utils";
+import ScrambleHover from "@/components/scramble-hover";
 
 export default function Home() {
   return (
@@ -18,25 +11,23 @@ export default function Home() {
           <div className="flex flex-col items-center text-center w-full">
             <div className="w-full max-w-full md:max-w-md">
               <h1 className="mb-3 sm:mb-6 text-left">
-                <ScrambleCombined
-                  delay={0}
-                  scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                  scrambleSpeed={SCRAMBLE_SPEED}
+                <ScrambleHover
+                  text="Dear You,"
+                  scrambleSpeed={30}
+                  maxIterations={15}
+                  useOriginalCharsOnly={true}
                   className="font-bold text-[#0015ff] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words"
-                >
-                  Dear You,
-                </ScrambleCombined>
+                />
               </h1>
               
               <div className="mb-0 text-left">
-                <ScrambleIn
-                  delay={getAnimationDuration("Coming Soon")}
-                  scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-                  scrambleSpeed={SCRAMBLE_SPEED}
+                <ScrambleHover
+                  text="A new adventure is about to begin ✺&#xfe0e;"
+                  scrambleSpeed={30}
+                  maxIterations={15}
+                  useOriginalCharsOnly={true}
                   className="inline-block text-lg sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words"
-                >
-                  A new adventure is about to begin ✺&#xfe0e;
-                </ScrambleIn>
+                />
               </div>
               
             </div>
@@ -66,14 +57,9 @@ export default function Home() {
 
           {/* Additional Info */}
           <div className="mt-2">
-            <ScrambleCombined
-              delay={getAnimationDuration("Coming Soon") + ROW_DELAY * 3}
-              scrambledLetterCount={SCRAMBLED_LETTER_COUNT}
-              scrambleSpeed={SCRAMBLE_SPEED}
-              className="text-xs sm:text-sm md:text-base opacity-50"
-            >
+            <span className="text-xs sm:text-sm md:text-base opacity-50">
               No spam. Unsubscribe anytime.
-            </ScrambleCombined>
+            </span>
           </div>
         </div>
       </div>
