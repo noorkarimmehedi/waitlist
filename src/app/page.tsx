@@ -66,7 +66,7 @@ export default function Home() {
                 <AnimatedText delay={1000} duration={0.6}>
                   <Image 
                     src="/imgi_2_imgi_11_image.webp"
-                    alt="Onlooop Team signature"
+                    alt="Kaarim's Team signature"
                     width={48}
                     height={48}
                     className="w-12 h-auto mt-2 mb-1"
@@ -80,7 +80,7 @@ export default function Home() {
                       useOriginalCharsOnly={true}
                       className="inline-block"
                     >
-                      Onlooop Team
+                      Kaarim&apos;s Team
                     </ScrambleHover>
                   </span>
                   <hr className="mt-2 border-t border-gray-300 w-24" />
