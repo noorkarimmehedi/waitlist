@@ -80,7 +80,7 @@ export default function Home() {
                       useOriginalCharsOnly={true}
                       className="inline-block"
                     >
-                      Kaarim&apos;s Team
+                      Operal&apos;s Team
                     </ScrambleHover>
                   </span>
                   <hr className="mt-2 border-t border-gray-300 w-24" />
