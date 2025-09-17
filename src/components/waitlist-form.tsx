@@ -1,10 +1,7 @@
 "use client";
 
-"use client";
-
-import { useState } from 'react';
-import AnimatedButton from './animated-button';
-import { addToWaitlist } from '@/lib/supabase/waitlist';
+import { useState } from "react";
+import AnimatedButton from "./animated-button";
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState('');
@@ -15,13 +12,18 @@ export default function WaitlistForm() {
     setStatus('loading');
 
     try {
-      const { success, error } = await addToWaitlist(email);
-      
-      if (success) {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
         setStatus('success');
         setEmail('');
       } else {
-        console.error('Failed to submit:', error);
+        const data = await res.json().catch(() => ({}));
+        console.error('Failed to submit:', data?.error);
         setStatus('error');
       }
     } catch (err: unknown) {

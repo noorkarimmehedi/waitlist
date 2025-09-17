@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Kaarim",
+      name: "Operal",
       url: "https://kaarim.com",
     },
   ],
-  creator: "Kaarim",
+  creator: "Operal",
   openGraph: {
     type: "website",
     locale: "en_US",

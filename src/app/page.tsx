@@ -66,7 +66,7 @@ export default function Home() {
                 <AnimatedText delay={1000} duration={0.6}>
                   <Image 
                     src="/imgi_2_imgi_11_image.webp"
-                    alt="Kaarim's Team signature"
+                    alt="Operal's Team signature"
                     width={48}
                     height={48}
                     className="w-12 h-auto mt-2 mb-1"
