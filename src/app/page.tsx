@@ -55,7 +55,7 @@ export default function Home() {
               </AnimatedText>
               <div className="mt-4">
                 <AnimatedText delay={900} duration={0.6}>
-                  <span className="block font-normal text-base sm:text-lg whitespace-nowrap">
+                  <span className="block font-normal text-base sm:text-sm md:text-base lg:text-lg xl:text-xl whitespace-nowrap">
                     <ScrambleHover
                       scrambleSpeed={30}
                       maxIterations={15}
@@ -76,7 +76,7 @@ export default function Home() {
                   />
                 </AnimatedText>
                 <AnimatedText delay={1100} duration={0.6}>
-                  <span className="block font-normal text-sm sm:text-base mt-1 whitespace-nowrap">
+                  <span className="block font-normal text-base sm:text-sm md:text-base lg:text-lg xl:text-xl mt-1 whitespace-nowrap">
                     <ScrambleHover
                       scrambleSpeed={30}
                       maxIterations={15}
