@@ -36,6 +36,9 @@ export default function Home() {
                   >
                     A new adventure is about to begin ✺&#xfe0e;
                   </ScrambleHover>
+                  <span className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl break-words inline-block mt-2">
+                    Meet Operal: a platform helping freelancers and creatives streamline business with client portals, invoicing, payments, file sharing, and real-time tracking.
+                  </span>
                 </div>
               </AnimatedText>
             </div>
